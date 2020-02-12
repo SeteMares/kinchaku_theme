@@ -1,0 +1,113 @@
+// Font
+@import url('https://fonts.googleapis.com/css?family=Lato:400|Open+Sans:400,700');
+
+// Bootstrap
+@import 'bootstrap/functions';
+@import 'bootstrap-variables';
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'bootstrap/root';
+@import 'bootstrap/reboot';
+@import 'bootstrap/grid';
+@import 'bootstrap/type';
+@import 'bootstrap/tables';
+@import 'bootstrap/buttons';
+@import 'bootstrap/dropdown';
+@import 'bootstrap/tooltip';
+@import 'bootstrap/popover';
+@import 'bootstrap/button-group';
+@import 'bootstrap/card';
+@import 'bootstrap/breadcrumb';
+@import 'bootstrap/pagination';
+@import 'bootstrap/media';
+@import 'bootstrap/images';
+
+// @import "bootstrap/modal";
+// @import "bootstrap/code";
+// @import "bootstrap/forms";
+// @import "bootstrap/transitions";
+// @import "bootstrap/input-group";
+// @import "bootstrap/custom-forms";
+// @import "bootstrap/nav";
+// @import "bootstrap/navbar";
+// @import "bootstrap/badge";
+// @import "bootstrap/jumbotron";
+// @import "bootstrap/alert";
+// @import "bootstrap/progress";
+// @import "bootstrap/list-group";
+// @import "bootstrap/close";
+// @import "bootstrap/carousel";
+// @import "bootstrap/print";
+@import 'bootstrap/utilities';
+
+// Libraries
+@import 'libraries/hamburgers/hamburgers';
+
+// Components
+@import 'components/reset';
+@import 'components/page';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/sub-footer';
+@import 'components/logo';
+@import 'components/main-menu';
+@import 'components/main-menu-mobile';
+@import 'components/social';
+@import 'components/hamburger';
+@import 'components/buttons';
+@import 'components/title';
+@import 'components/content';
+@import 'components/intro';
+@import 'components/strip';
+@import 'components/whitebox';
+@import 'components/feature';
+@import 'components/hero-image';
+@import 'components/bg';
+
+// Pages
+@import 'pages/services/page-services-list';
+@import 'pages/services/page-services-single';
+@import 'pages/services/service-summary';
+@import 'pages/walletpass/walletpass-summary';
+@import 'pages/walletpass/page-walletpass-single';
+@import 'pages/blog/blog-summary';
+@import 'pages/blog/blog-list';
+@import 'pages/blog/blog-single';
+
+#TableOfContents ul ul {
+    margin-bottom: 1rem;
+}
+
+#TableOfContents ul ul ul {
+    margin-left: 1rem;
+}
+
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.page p {
+    margin-bottom: 1.5rem;
+}
+
+// Display breakpoints for DEV
+// body:after {
+//   color: #000000;
+//   font-size: 12px;
+//   padding: 5px;
+//   font-weight: bold;
+//   right: 10px;
+//   position: fixed;
+//   text-align: center;
+//   text-transform: uppercase;
+//   bottom: 10px;
+//   width: 200px;
+//   z-index: 9999;
+//   border: solid 1px #000000;
+//   @each $name, $value in $grid-breakpoints {
+//     @include media-breakpoint-up($name) {
+//       content: "#{$name} - min-width: #{$value}";
+//     }
+//   }
+// }
