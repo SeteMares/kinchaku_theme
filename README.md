@@ -1,4 +1,6 @@
-# Hugo Hero Theme
+# Hugo theme for Kinchaku Landing Site
+
+Hugo Hero Theme
 
 Hero is a multi-page, multi-purpose theme with fullscreen hero images and fullwidth sections.
 
