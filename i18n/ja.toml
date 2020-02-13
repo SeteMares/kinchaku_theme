@@ -1,0 +1,10 @@
+[home]
+other = "ホーム"
+[nextPage]
+other = "進む"
+[previousPage]
+other = "戻る"
+[mainFeatures]
+other = "主な機能"
+[allFeatures]
+other = "機能一覧"

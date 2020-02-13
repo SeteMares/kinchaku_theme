@@ -1,0 +1,10 @@
+[home]
+other = "home"
+[nextPage]
+other = "next page"
+[previousPage]
+other = "previous page"
+[mainFeatures]
+other = "main features"
+[allFeatures]
+other = "all features"
