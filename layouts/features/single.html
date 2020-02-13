@@ -1,0 +1,54 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-services-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+{{ define "meta_tags" }}
+<meta name="robots" content="index, follow" />
+<meta name="description" content="{{ .Params.Description }}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ .Params.heroBackground | absURL }}" />
+<meta property="og:description" content="{{ .Params.Description }}" />
+
+{{ with.Site.Params.googlever.id }}
+<meta name="google-site-verification" content="{{ . }}" />
+{{ end }}
+
+{{ with.Site.Params.facebook.appid }}
+<meta property="fb:app_id" content="{{ . }}" />
+{{ end }}
+
+{{ with.Site.Language }}
+<meta property="og:locale" content="{{ .Lang }}" />
+{{ end }}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@KINCHAKU_BI" />
+<meta name="twitter:title" content="{{ .Params.heroHeading }}" />
+<meta name="twitter:description" content="{{ .Params.Description }}" />
+<meta name="twitter:image" content="{{ .Params.heroBackground | absURL }}" />
+{{ $dateFormat := default "yyyy-MM-dd" (index .Site.Params "date_format") }}
+{{ end }}
+{{ define "main" }}
+{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "section" .Section "content" .)}}
+<div class="container pt-4 pt-md-10 pb-4 pb-md-10">
+  <div class="row justify-content-center md-auto">
+    <div class="col-12 col-md-10">
+      <div class="service service-single">
+        <div class="content">{{.Content}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if .Site.IsServer }}
+<script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+{{ else }}
+<script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
+{{ end }}
