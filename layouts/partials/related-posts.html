@@ -1,0 +1,12 @@
+<li class="media mb-3">
+  <a title="{{ .Title }}" href="{{ .RelPermalink }}" class="d-none d-sm-block">
+    <img class="mr-3 img-thumbnail img-fluid" width="200" alt="{{ .Title }}"
+      src="{{ with .Params.heroBackground }}{{ . | absURL }}{{ end }}" alt="{{ .Params.title }}">
+  </a>
+  <div class="media-body">
+    <h5 class="mt-0 mb-1">
+      <a title="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+    </h5>
+    {{ .Description }}
+  </div>
+</li>

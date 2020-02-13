@@ -1,0 +1,13 @@
+<div class="walletpass walletpass-summary">
+  {{ if .Params.thumbnail }}
+  <div class="walletpass-image">
+    <a href="{{ .RelPermalink }}"><img src="{{ .Params.thumbnail | relURL }}" /></a>
+  </div>
+  {{ end }}
+  <div class="walletpass-content">
+    <h2 class="walletpass-title">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    {{ .Params.heroSubHeading }}
+  </div>
+</div>

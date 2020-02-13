@@ -1,0 +1,14 @@
+{{ $dateFormat := default "2006/01/01" (index .Site.Params "date_format") }}
+
+<ul class="list-inline">
+  <li class="list-inline-item">
+    <span class="grey-text text-darken-1" content="{{ .Date.Format $dateFormat }}">
+      {{ .Date.Format $dateFormat }}
+    </span>
+  </li>
+  <li class="list-inline-item float-right">
+    <span>
+      {{ .Params.Author }}
+    </span>
+  </li>
+</ul>

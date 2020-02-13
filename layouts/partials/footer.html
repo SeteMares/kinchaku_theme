@@ -3,11 +3,18 @@
     <div class="row">
       <div class="col-12">
         <div class="footer-inner">
-          <ul class="footer-menu">
-            <li><a href="{{ .Site.BaseURL }}">Home</a></li>
-            <li><a href="{{ .Site.BaseURL }}contact">Contact</a></li>
-            <li class="copyright">© {{ now.Format "2006" }} {{.Site.Title}}</li>
-          </ul>
+          <div>
+            {{ partial "social" }}
+          </div>
+          {{ if .Site.Params.footer_menus }}
+          {{ $menus := .Site.Menus }}
+          {{ $colWidth := math.Floor (div 12 (len .Site.Params.footer_menus)) }}
+          {{ range $index, $menu := .Site.Params.footer_menus }}
+          <div>
+            {{ partial "menu-links" (dict "menu" (index $menus $menu.menu) "name" $menu.name ) }}
+          </div>
+          {{ end }}
+          {{ end }}
         </div>
       </div>
     </div>

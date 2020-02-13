@@ -1,0 +1,8 @@
+{{ if gt (len .Site.Home.AllTranslations) 1 }}
+<div class="btn-group" role="group" aria-label="language switch">
+    {{ range .Site.Home.AllTranslations }}
+    <a class="btn btn-outline-light btn-sm" href="{{ .Permalink }}" rel="alternate" hreflang="{{ .Language }}"
+        lang="{{ .Language }}">{{ .Language.LanguageName }}</a>
+    {{ end }}
+</div>
+{{ end }}

@@ -1,9 +1,10 @@
 <div id="main-menu" class="main-menu">
-  <ul>
+  <ul itemscope itemtype="http://www.schema.org/SiteNavigationElement">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-    <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
-      <a href="{{.URL}}">
+    <li itemprop="name"
+      class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+      <a href="{{.URL}}" itemprop="url" href="{{ .URL | relLangURL }}">
         {{ .Pre }}
         <span>{{ .Name }}</span>
       </a>

@@ -1,0 +1,26 @@
+<div class="col-12 col-md-6 mb-2">
+  <div class="card">
+    <a class="indigo-text text-darken-3" href="{{ .RelPermalink }}">
+      <img class="card-img-top img-fluid" src="{{ with .Params.heroBackground }}{{ . | absURL }}{{ end }}"
+        alt="{{ .Params.title }}" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+    </a>
+
+    <div class="card-body">
+      <h4 class="h4 card-title blog-list-title mb-2">
+        <a href="{{ .RelPermalink }}">
+          <b>{{ .Title | markdownify }}</b>
+        </a>
+      </h4>
+      <div class="card-text">
+        {{ .Params.description }}
+      </div>
+    </div>
+
+    <div class="card-footer text-muted">
+      {{ $dateFormat := default "2006/01/01" (index .Site.Params "date_format") }}
+      <span class="grey-text text-darken-1" content="{{ .Date.Format $dateFormat }}">
+        {{ .Date.Format $dateFormat }}
+      </span>
+    </div>
+  </div>
+</div>

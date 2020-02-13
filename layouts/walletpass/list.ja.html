@@ -1,0 +1,76 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-walletpass-list{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+
+{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+{{ if .Content }}
+<div class="container mt-3 pt-1 pt-xs-1">
+      <div class="row mb-3">
+        <div class="col-12">
+          <div class="page-intro">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+      <h2 class="py-3 text-center text-primary">KINCHAKUで発行されるウォレットパスの特徴</h2>
+      <div class="row">
+        <div class="col-12 col-md-5">
+          <h3 class="mt-3">ロック画面の通知</h3>
+          <ul style="list-style-type: disc; padding-left: 20px;">
+            <li class="mb-1">スマホのロック画面にリアルタイムの情報を発信し、お客様の来店や再来店を促進できます。</li>
+            <li class="mb-1">時間を設定し、人がより外出する時間帯などにプッシュ通知を配信できます。</li>
+            <li class="mb-1">店舗やイベント会場の場所を設定し、広範囲でプッシュ通知を配信できます。</li>
+            <li class="mb-1">ビーコン端末を設置した店舗やイベント会場で近距離プッシュ通知を配信できます。</li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-7">
+          <img class="img-fluid" src="https://s3-ap-northeast-1.amazonaws.com/kinchaku-static-site/uploads/lockscreen.png"
+            alt="ロック画面に表示できる通知" title="ロック画面に表示できる通知" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h3 class="mt-3">データ</h3>
+          <img class="img-fluid my-3" src="https://s3-ap-northeast-1.amazonaws.com/kinchaku-static-site/uploads/pass-data.png"
+            alt="パスデータ" title="パスデータ" />
+          
+          <ul style="list-style-type: disc; padding-left: 20px;" class="mb-3">
+            <li class="mb-1">利用状況を見える化し、どの販促行動が効果的かを測ることができます。</li>
+            <li class="mb-1">顧客をセグメント化し、商品・サービスのアプローチを改善できます。</li>
+            <li class="mb-1">メルマガ・DM などでもお客様との関係構築を強化することが期待できます。</li>
+          </ul>
+
+        </div>
+      </div>
+</div>
+</div>
+{{ end }}
+<div class="container pt-3 pt-xs-1">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-3">発行可能なパス一覧</h3>
+    </div>
+  </div>
+</div>
+<div class="container pb-6 pb-md-6">
+  <div class="row">
+    {{ range .Pages.ByWeight }}
+    <div class="col-12 col-md-6 mb-2 ">{{ .Render "summary" }}</div>
+    {{ end }}
+  </div>
+</div>
+<div class="strip bg-primary bg-cover bg-position-top bg-overlay">
+  <div class="container pt-8 pb-8 pb-md-12 ">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center text-white">
+        <h3 class="mb-3">今すぐ、無料で始めよう。</h3>
+        <a class="button button-white mb-0" href="https://app.kinchaku.com/signup"
+          title="{{ .Params.heroSubHeading }}">無料アカウント登録</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,49 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<nav aria-label="page navigation">
+    <ul class="pagination" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <li class="page-item">
+            <a class="page-link" {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}" {{ end }} aria-label="Previous"
+                itemprop="url">
+                <span aria-hidden="true">&laquo;</span>
+                <meta itemprop="name" content='{{ i18n "previousPage" }}' />
+                <span class="sr-only">&laquo;</span>
+            </a>
+        </li>
+
+        {{ $.Scratch.Set "__paginator.ellipsed" false }}
+        {{ range $pag.Pagers }}
+        {{ $right := sub .TotalPages .PageNumber }}
+        {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
+        {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2)))  }}
+        {{ if $showNumber }}
+        {{ $.Scratch.Set "__paginator.ellipsed" false }}
+        {{ $.Scratch.Set "__paginator.shouldEllipse" false }}
+        {{ else }}
+        {{ $.Scratch.Set "__paginator.shouldEllipse" (not ($.Scratch.Get "__paginator.ellipsed") ) }}
+        {{ $.Scratch.Set "__paginator.ellipsed" true }}
+        {{ end }}
+        {{ if $showNumber }}
+        <li class="page-item {{ if eq . $pag }}active {{ end }}">
+            <a class="page-link" href="{{ .URL }}" itemprop="url">
+                <span itemprop="name">{{ .PageNumber }}</span>
+            </a>
+        </li>
+        {{ else if ($.Scratch.Get "__paginator.shouldEllipse") }}
+        <li class="page-item disabled">
+            <a aria-hidden="true" class="ml-1 mr-1">&hellip;</a>
+        </li>
+        {{ end }}
+        {{ end }}
+
+        <li class="page-item">
+            <a class="page-link" {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}" {{ end }} aria-label="Next"
+                itemprop="url">
+                <span aria-hidden="true">&raquo;</span>
+                <meta itemprop="name" content='{{ i18n "nextPage" }}' />
+                <span class="sr-only">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{{ end }}

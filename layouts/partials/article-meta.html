@@ -1,0 +1,29 @@
+{{ $dateFormat := default "2006/01/01" (index .Site.Params "date_format") }}
+
+<div class="article-meta">
+  {{ if .Params.addthis }}
+  <div class="mb-1">
+    <div class="addthis_inline_share_toolbox"></div>
+  </div>
+  {{ end }}
+  <p class="text-muted mb-0" content="{{ .Date.Format $dateFormat }}">
+    {{ .Date.Format $dateFormat }}
+  </p>
+  <p class="text-muted">
+    {{ .Params.Author }}
+  </p>
+  {{ $taxo := "categories" }}
+  <!-- Use the plural form here -->
+  <ul id="{{ $taxo }}">
+    {{ range .Param $taxo }}
+    {{ $name := . }}
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+    <li>カテゴリー：<a href="{{ .Permalink }}">{{ $name }}</a></li>
+    {{ end }}
+    {{ end }}
+  </ul>
+
+  {{ if .Params.toc }}
+  <div class="d-none d-sm-block">{{ .TableOfContents }}</div>
+  {{ end }}
+</div>

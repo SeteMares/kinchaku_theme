@@ -1,16 +1,16 @@
 <div class="sub-footer">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <div class="sub-footer-inner">
-          <ul>
-            <li><strong>Phone: </strong>{{ .Site.Data.contact.phone }}</li>
-            <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
-                {{ .Site.Data.contact.email }}</a></li>
-          </ul>
-          <ul>
-            <li class="zerostatic"><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>
-          </ul>
+      <div class="col-6">
+
+        {{ partial "language-selector" . }}
+      </div>
+      <div class="col-6">
+        <div class="text-right">
+          <span class="copyright text-light">© {{ now.Format "2006" }}
+            <a class="text-light" href="https://setemares.co" title="株式会社SETE MARES 公式サイト">
+              Sete Mares
+            </a></span>
         </div>
       </div>
     </div>

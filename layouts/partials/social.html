@@ -1,19 +1,38 @@
-<ul id="social" class="social">
-  <li>
-    <a class="social-vimeo" href="{{ .Site.Data.social.vimeo }}" target="blank">
-      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <title>Facebook icon</title>
-        <path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0" />
-      </svg>
-    </a>
+<ul id="social" class="social py-1">
+  <li>{{ .Site.Data.social.twitter }} {{ .Site.Data.jafeatures }}
+    <a class="social-twitter" title="Twitter" alt="Twitter" href="https://twitter.com/KINCHAKU_BI"
+      target="blank">&nbsp;</a>
   </li>
   <li>
-    <a class="social-twitter" href="{{ .Site.Data.social.twitter }}" target="blank"></a>
+    <a class="social-facebook" title="Facebook" alt="Facebook" href="https://www.facebook.com/kinchaku/"
+      target="blank">&nbsp;</a>
   </li>
   <li>
-    <a class="social-instagram" href="{{ .Site.Data.social.instagram }}" target="blank"></a>
+    <a class="social-instagram" title="Instagram" alt="Instagram" href="https://www.instagram.com/kinchaku_bi/"
+      target="blank">&nbsp;</a>
   </li>
   <li>
-    <a class="social-linkedin" href="{{ .Site.Data.social.linkedin }}" target="blank"></a>
+    <a class="social-slack" title="Slack" alt="Slack"
+      href="https://join.slack.com/t/kinchaku/shared_invite/enQtODExMjAwODQzMDI1LTRlYzE5MjVmZGZmYTE0Nzg0MDYwY2ZkNDdhN2Y1NmJmYzI5NWVlYTRkYTgyNTY5NDA5MzI0YzA0ODM1YmM5ZDI"
+      target="blank">&nbsp;</a>
   </li>
 </ul>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SETE MARES",
+    "url": "http://setemares.co",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.Params.smlogo.url }}",
+      "width": "{{ .Site.Params.smlogo.width }}",
+      "height": "{{ .Site.Params.smlogo.height }}"
+    },
+    "sameAs": [
+      "https://www.facebook.com/kinchaku/",
+      "https://twitter.com/KINCHAKU_BI"
+    ]
+  }
+
+</script>
