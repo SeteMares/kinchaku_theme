@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-{{ with .Site.Language }}<html lang="{{ .Lang }}">{{ end }}
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+  <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{ if and (eq .Kind "taxonomy") (eq .Type "categories")}}
+  <meta name="robots" content="noindex, follow" />
+  {{ else }}
+  <meta name="robots" content="index, follow" />
+  {{ end }}
+  {{ if or (eq .Kind "home") (eq .Kind "page")}}
+  {{ if isset .Params "canonical" }}
+  <link rel="canonical" href="{{ .Params.Canonical}}" />
+  {{ else }}
+  <link rel="canonical" href="{{ .Permalink}}" />
+  {{ end }}
+  {{ end }}
+  {{ define "meta_tags" }}
+  <meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+  <meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+  <meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+  <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+  <meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+  <meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+  <meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+  <meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+
+  {{ if .IsHome }}
+  {{ with .Site.Params.homepage_meta_tags.meta_description }}
+  <meta name="description" content="{{ . }}">
+  {{ end }}
+  {{ end }}
+
+  {{ if .Params.Description }}
+  <meta name="description" content="{{ .Params.Description }}">
+  {{ else }}
+  <meta name="description" content="{{ .Summary }}">
+  {{ end }}
+  {{ with .Site.Params.googlever.id }}
+  <meta name="google-site-verification" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.facebook.appid }}
+  <meta property="fb:app_id" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Language }}
+  <meta property="og:locale" content="{{ .Lang }}" />
+  {{ end }}
+  {{ end }}
+
   {{ block "meta_tags" . }}{{end}}
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TC7PSHM');
+
+  </script>
+  <!-- End Google Tag Manager -->
+
   <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
 
   {{ if .Site.IsServer }}
@@ -15,10 +81,13 @@
   {{ else }}
   {{ $style := resources.Get "scss/style.scss" | toCSS (dict "targetPath" "css/style.css" "enableSourceMap" false) }}
   <link rel="stylesheet" href="{{ ($style | minify | fingerprint).RelPermalink }}">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
   {{ end }}
 
   {{ block "header_css" . }}{{ end }}
-
+  <script
+    id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/67b5b5662f7663525252b92fb/0e608064e0e1ec7f444b33a25.js");</script>
 </head>
 
 <body class='page {{ block "body_classes" . }}{{ end }}'>
@@ -44,7 +113,22 @@
   {{ end }}
 
   {{ partial "google-analytics.html" . }}
-
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58a5816388fb73f7"></script>
+  <!-- Start of LiveChat (www.livechatinc.com) code -->
+  <script type="text/javascript">
+    window.__lc = window.__lc || {};
+    window.__lc.license = 11516658;
+    (function () {
+      var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+      lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+    })();
+  </script>
+  <noscript>
+    <a href="https://www.livechatinc.com/chat-with/11516658/" rel="nofollow">Chat with us</a>,
+    powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+  </noscript>
+  <!-- End of LiveChat code -->
 </body>
 
 </html>

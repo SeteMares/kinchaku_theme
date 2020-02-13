@@ -1,0 +1,118 @@
+{{ define "header_css" }}{{ end }} {{ define "body_classes" }}page-blog-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "meta_tags" }}
+
+<meta property="article:author" content="{{ .Params.Author }}" />
+<meta name="description" content="{{ .Params.Description }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ .Params.heroBackground | absURL }}" />
+<meta property="og:description" content="{{ .Params.Description }}" />
+
+{{ with.Site.Params.googlever.id }}
+<meta name="google-site-verification" content="{{ . }}" />
+{{ end }}
+
+{{ with.Site.Params.facebook.appid }}
+<meta property="fb:app_id" content="{{ . }}" />
+{{ end }}
+
+{{ with.Site.Language }}
+<meta property="og:locale" content="{{ .Lang }}" />
+{{ end }}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@KINCHAKU_BI" />
+<meta name="twitter:title" content="{{ .Params.heroHeading }}" />
+<meta name="twitter:description" content="{{ .Params.Description }}" />
+<meta name="twitter:image" content="{{ .Params.heroBackground | absURL }}" />
+{{ $dateFormat := default "yyyy-MM-dd" (index .Site.Params "date_format") }}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "BlogPosting",
+        "headline": "{{ .Title }}",
+        "datePublished": "{{ .PublishDate.Format $dateFormat }}",
+        "dateCreated": "{{ .Date.Format $dateFormat }}",
+        "dateModified": "{{ .Lastmod.Format $dateFormat }}",
+        "description": "{{ .Params.Description }}",
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ .Params.heroBackground | absURL }}"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Params.author }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SETE MARES",
+            "url": "https://setemares.co",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ .Site.Params.smlogo.url }}",
+                "width": "{{ .Site.Params.smlogo.width }}",
+                "height": "{{ .Site.Params.smlogo.height }}"
+            },
+            "sameAs": [
+                "https://www.facebook.com/kinchaku/",
+                "https://twitter.com/KINCHAKU_BI"
+            ]
+        },
+        "articleBody": "{{ .Content | plainify }}"
+    }
+</script>
+{{ end }}
+
+{{ define "main" }}
+{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "section" .Section "content" .)}}
+
+<div class="container pt-4 pt-md-10 pb-4 pb-md-10">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            {{ partial "article-meta" . }}
+        </div>
+        <div class="col-12 col-md-8">
+            <div class="blog blog-single">
+                <article class="content">{{.Content}}</article>
+                <div class="mb-1">
+                    <div class="addthis_inline_share_toolbox"></div>
+                </div>
+            </div>
+            {{ if .Params.categories | len | lt 0 }}
+            <hr class="my-3" />
+            <h4 class="text-muted mt-3 mb-3">関連記事</h4>
+            {{ end }}
+            {{ $page_link := .Permalink }}
+            {{ $categories := .Params.categories }}
+            {{ range $page := .Site.Pages }}
+            {{ $has_common_categories := intersect $categories .Params.categories | len | lt 0 }}
+            {{ if and $has_common_categories (ne $page_link $page.Permalink) (lt ($.Scratch.Get "$c") 3)}}
+            {{ $.Scratch.Add "$c" 1 }}
+            <section class="row">
+                <div class="col-12">
+                    <ul class="list-unstyled">
+                        {{ partial "related-posts" . }}
+                    </ul>
+                </div>
+            </section>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="mx-auto">
+                {{ if .NextInSection }}
+                <a class="btn btn-outline-primary float-right" href="{{.NextInSection.Permalink}}">&raquo;</a>
+                {{ end }}
+                {{ if .PrevInSection }}
+                <a class="btn btn-outline-primary float-left" href="{{.PrevInSection.Permalink}}">&laquo;</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

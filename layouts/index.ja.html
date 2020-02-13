@@ -1,0 +1,118 @@
+{{ define "title" }}KINCHAKU | 継続利用を促進するクラウドプラットフォーム{{ end}}
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-home{{ end }}
+{{ define "header_classes" }}header-transparent{{ end }}
+
+{{ define "main" }}
+
+{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $reusablePages := $headless.Resources.ByType "page" }}
+{{ $reusablePages := sort $reusablePages ".Params.weight" }}
+{{ range first 1 $reusablePages }}
+<div id="home">
+  <div class="container pt-8 pb-8">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2">
+        <p class="h4 mb-4">Apple Wallet や Google Pay に追加可能なクーポン、ポイントカード、スタンプカード、会員証、
+          イベントチケットを発行し、ファンを獲得し、集客を促進します。<a href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a></p>
+      </div>
+    </div>
+    <div class="row">
+      {{ range .Site.Data.jawalletpasses }}
+      {{ if .featured }}
+      <div class="col-12 col-md-6 col-lg-3 mb-2">
+        <a href="{{ .url }}" title="{{ .title }}">
+          <img class="img-fluid" src="{{ .img }}" alt="{{ .title }}" title="{{ .title }}" width="100%" />
+        </a>
+        <div class="mt-2">
+          <a href="{{ .url }}" title="{{ .title }}">
+            <h3 class="h4 text-primary mb-1">{{ .title }}</h3>
+          </a>
+          {{ .description }}
+        </div>
+      </div>
+      {{end}}
+      {{end}}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="bg-light">
+    <div class="container pt-8 pb-8 pb-md-14 pt-md-14">
+      <div class="row justify-content-start">
+        <div class="col-12">
+          <h2 class="text-center mb-3">{{ i18n "mainFeatures" }}</h2>
+        </div>
+        <div class="container">
+          <div class="row justify-content-start">
+            {{ range .Site.Data.jafeatures }}
+            {{ if .featured }}
+            <div class="col-12 col-md-6 col-lg-4 mb-2">
+              <h3 class="h4 text-primary">{{ .title }}</h3>
+              <div>
+                {{ .description }}
+                {{ if .pagelink}}<a href="{{ .pagelink }}" title="{{ .title}}">詳細</a>{{ end }}
+              </div>
+            </div>
+            {{end}}
+            {{end}}
+          </div>
+        </div>
+        <div class="col-12 text-center mt-3">
+          <a class="button button-primary" href="{{ .Site.BaseURL }}features">{{ i18n "allFeatures" }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container pb-8 pt-8 pb-md-8 pt-md-8">
+    <div class="row justify-content-center mb-3">
+      <div class="col-12 col-md-8 text-center">
+        <h3 class="h2"><b>最新ブログ</b></h3>
+      </div>
+    </div>
+    <div class="row justify-content-center page-blog-list">
+      {{ range first 2 .Site.Taxonomies.tags.featured }}
+      {{ partial "recent-posts" . }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="bg-light">
+    <div class="container pb-8 pt-8 pb-md-8 pt-md-8">
+      <div class="row justify-content-center mb-3">
+        <div class="col-12 col-sm-8 col-md-8 text-center">
+          <h3 class="h2"><b>お知らせ</b></h3>
+        </div>
+      </div>
+      <div class="row justify-content-center page-blog-list">
+        <div class="col-12 col-sm-8 col-md-8">
+
+          {{ range first 3 .Site.Taxonomies.tags.news }}
+          {{ partial "news-list" . }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ range first 1 (after 1 $reusablePages) }}
+  <div class="strip bg-primary bg-cover bg-position-top bg-overlay"
+    style='background-image: url("{{ .Params.background | relURL }}");'>
+    <div class="container pt-8 pb-8 pb-md-12 pt-md-12">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-center text-white">
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Content }}</p>
+          <a class="button button-white mt-3" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
+
+  {{ end }}
+
+  {{ define "footer_js" }}
+  {{ end }}

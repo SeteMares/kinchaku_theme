@@ -1,0 +1,53 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-services-list{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+
+<div id="hero" class="hero-image hero-image-setheight"
+    style="background-image: url('{{ .Params.heroBackground | relURL }}')">
+    <div class="container ">
+        <div class="hero-text">
+            <h1>{{ .Params.heroHeading }}</h1>
+            {{ if .Params.heroSubHeading }}
+            <p>{{ .Params.heroSubHeading }}</p>
+            {{ end }}
+            {{ partial "breadcrumb" . }}
+        </div>
+    </div>
+</div>
+
+{{ if .Content }}
+<div class="container mt-2 page-blog-list">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 mt-2 mb-2">
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+{{ end }}
+
+<div class="container mt-2 page-blog-list">
+    <div class="row justify-content-center">
+        {{ $paginator := .Paginate (.Pages) }}
+        <div class="col-12 col-md-8 mb-2">
+            <ul class="list-group mt-2">
+
+                {{ range $paginator.Pages }}
+                <li class="list-group-item">
+                    <h2 class="h4 mb-1"><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
+                    <small itemprop="description">{{ .Params.description }}</small>
+                    <hr class="mb-4" />
+                </li>
+
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 mb-2">
+            {{ partial "paginator" . }}
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,76 @@
+{{ define "title" }}KINCHAKU | 継続利用を促進するクラウドプラットフォーム{{ end}}
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-home{{ end }}
+{{ define "header_classes" }}header-transparent{{ end }}
+
+{{ define "main" }}
+
+{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+
+{{ $headless := .Site.GetPage "/homepage" }}
+{{ $reusablePages := $headless.Resources.ByType "page" }}
+{{ $reusablePages := sort $reusablePages ".Params.weight" }}
+{{ range first 1 $reusablePages }}
+<div id="home" class="strip bg-cover bg-position-top bg-overlay"
+  style="background-image: url('{{ .Params.background | relURL }}');">
+  <div class="container pt-17 pb-17">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-md-6">
+        <h2 class="text-primary text-capitalize">{{ .Title }}</h2>
+        <p>{{ .Content }}</p>
+        <a class="button" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+<div id="home" class="bg-light">
+  <div class="container pt-8 pb-8 pb-md-14 pt-md-14">
+    <div class="row justify-content-start">
+      <div class="col-12">
+        <h2 class="text-center mb-3 text-capitalize">{{ i18n "mainFeatures" }}</h2>
+      </div>
+      <div id="home" class="container">
+        <div class="row justify-content-start">
+          {{ range .Site.Data.enfeatures }}
+          {{ if .featured }}
+          <div class="col-12 col-md-6 col-lg-4 mb-2">
+            <h3 class="h4 text-primary text-capitalize">{{ .title }}</h3>
+            <div>
+                {{ .description }}
+                {{ if .pagelink}}<a href="{{ .pagelink }}" title="{{ .title}}">Read more</a>{{ end }}
+            </div>
+          </div>
+          {{end}}
+          {{end}}
+        </div>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <a class="button button-primary" href="{{ .Site.BaseURL }}en/features">{{ i18n "allFeatures" }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ range first 1 (after 1 $reusablePages) }}
+<div id="home" class="strip bg-primary bg-cover bg-position-top bg-overlay"
+  style='background-image: url("{{ .Params.background | relURL }}");'>
+  <div class="container pt-8 pb-8 pb-md-12 pt-md-12">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 text-center text-white">
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Content }}</p>
+        <a class="button button-white mt-3" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+</div>
+
+{{ end }}
+
+{{ define "footer_js" }}
+{{ end }}

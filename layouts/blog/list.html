@@ -1,0 +1,84 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-services-list{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+
+{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+{{ if .Content }}
+<div class="container pt-6 pt-md-10">
+  <div class="row">
+    <div class="col-12">
+      <div class="page-intro">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+<div class="container mt-2 page-blog-list" itemscope itemtype="https://schema.org/Blog">
+  <div class="row">
+    <div class="col-12 col-md-3 mb-2">
+        <h4 class="px-1">カテゴリー</h4>
+        <ul class="px-1">
+            {{ range .Site.Taxonomies.categories }}
+            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+            {{ end }}
+        </ul>
+        
+    </div>
+    <div class="col-12 col-md-9 mb-2">
+
+    {{ range .Paginator.Pages }}
+      <div class="card mb-2" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="card-header">
+          <h3 class="card-title blog-list-title mb-0" itemprop="headline">
+            <a href="{{ .RelPermalink }}" itemprop="url">
+              <b>{{ .Title | markdownify }}</b>
+            </a>
+          </h3>
+        </div>
+        {{ $dateFormat := default "yyyy-MM-dd" (index .Site.Params "date_format") }}
+        <meta itemprop="name" content="{{ .Title }}" />
+        <meta itemprop="dateModified" content="{{ .Lastmod.Format $dateFormat }}" />
+        <meta itemprop="datePublished" content="{{ .PublishDate.Format $dateFormat }}" />
+        <meta itemprop="author" content="{{ .Params.author }}" />
+        <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+          <meta itemprop="name" content="SETE MARES">
+          <meta itemprop="url" content="https://setemares.co">
+          <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="{{ .Site.Params.smlogo.url }}">
+            <meta itemprop="width" content="{{ .Site.Params.smlogo.width }}">
+            <meta itemprop="height" content="{{ .Site.Params.smlogo.height }}">
+          </span>
+        </span>
+        <div class="blog-image-crop" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+          <a class="indigo-text text-darken-3" href="{{ .Permalink }}">
+            <img class="card-img-top img-fluid" src="{{ with .Params.heroBackground }}{{ . | absURL }}{{ end }}"
+              alt="{{ .Params.title }}" itemprop="url contentUrl">
+          </a>
+        </div>
+
+        <div class="card-body">
+          <div class="card-text">
+            <div itemprop="description">{{ .Params.description }}</div>
+          </div>
+        </div>
+
+        <div class="card-footer text-muted">
+          {{ partial "summary-meta" . }}
+        </div>
+      </div>
+
+    {{ end }}
+
+<div class="row mb-6">
+    <div class="col-12">
+        {{ partial "paginator" . }}
+    </div>
+</div>
+    </div>
+  </div>
+</div>
+{{ end }}
