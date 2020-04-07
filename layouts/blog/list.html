@@ -4,7 +4,17 @@
 
 {{ define "main" }}
 
-{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+<div class="taxonomy-hero">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col align-self-center">
+        <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+        <p class="text-white">{{ .Params.heroSubHeading }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 {{ if .Content }}
 <div class="container pt-6 pt-md-10">
   <div class="row">
@@ -17,23 +27,23 @@
 </div>
 {{ end }}
 
-<div class="container mt-2 page-blog-list" itemscope itemtype="https://schema.org/Blog">
+<div class="container mt-3 page-taxonomy-list" itemscope itemtype="https://schema.org/Blog">
   <div class="row">
     <div class="col-12 col-md-3 mb-2">
-        <h4 class="px-1">カテゴリー</h4>
-        <ul class="px-1">
-            {{ range .Site.Taxonomies.categories }}
-            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
-            {{ end }}
-        </ul>
-        
+      <h4 class="pr-1">カテゴリー</h4>
+      <ul class="pr-1">
+        {{ range .Site.Taxonomies.categories }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+        {{ end }}
+      </ul>
+
     </div>
     <div class="col-12 col-md-9 mb-2">
 
-    {{ range .Paginator.Pages }}
-      <div class="card mb-2" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      {{ range .Paginator.Pages }}
+      <div class="card mb-3" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="card-header">
-          <h3 class="card-title blog-list-title mb-0" itemprop="headline">
+          <h3 class="card-title h4 taxonomy-list-title mb-0" itemprop="headline">
             <a href="{{ .RelPermalink }}" itemprop="url">
               <b>{{ .Title | markdownify }}</b>
             </a>
@@ -53,7 +63,7 @@
             <meta itemprop="height" content="{{ .Site.Params.smlogo.height }}">
           </span>
         </span>
-        <div class="blog-image-crop" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <div class="taxonomy-image-crop" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
           <a class="indigo-text text-darken-3" href="{{ .Permalink }}">
             <img class="card-img-top img-fluid" src="{{ with .Params.heroBackground }}{{ . | absURL }}{{ end }}"
               alt="{{ .Params.title }}" itemprop="url contentUrl">
@@ -71,13 +81,13 @@
         </div>
       </div>
 
-    {{ end }}
+      {{ end }}
 
-<div class="row mb-6">
-    <div class="col-12">
-        {{ partial "paginator" . }}
-    </div>
-</div>
+      <div class="row mb-6">
+        <div class="col-12">
+          {{ partial "paginator" . }}
+        </div>
+      </div>
     </div>
   </div>
 </div>

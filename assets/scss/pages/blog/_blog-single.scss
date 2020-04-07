@@ -1,56 +1,66 @@
 .page-blog-single {
-  .content {
-    >p {
-      &:first-of-type {
-        font-size: 1.2rem;
-        line-height: 1.5;
-        margin-bottom: 40px;
-        font-weight: 300;
-
-        @include media-breakpoint-up(md) {
-          font-size: 1.4rem;
-          line-height: 1.4;
-          margin-bottom: 40px;
-          font-weight: 300;
+    .hero-image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top right;
+        @include media-breakpoint-between(xs, sm) {
+            background-position: 84% 0%;
         }
-      }
+        background-blend-mode: overlay;
+        background-color: $primary;
     }
-  }
+    .content {
+        > p {
+            &:first-of-type {
+                font-size: 1.2rem;
+                line-height: 1.5;
+                margin-bottom: 40px;
+                font-weight: 300;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 1.4rem;
+                    line-height: 1.4;
+                    margin-bottom: 40px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
 }
 
 article.content pre {
-  font: 12px Courier, monospace;
-  padding: .85em .95em .65em !important;
-  margin: 1rem auto;
-  font-size: 85%;
-  background-color: rgba(0, 0, 0, .08);
-  border-radius: 3px;
+    font: 12px Courier, monospace;
+    padding: 0.85em 0.95em 0.65em !important;
+    margin: 1rem auto;
+    font-size: 85%;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
 }
 
 article.content pre code {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 article.content table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 
-  th,
-  td {
-    padding: 1rem;
-    vertical-align: top;
-    border-top: 1px solid #999 !important;
-  }
+    th,
+    td {
+        padding: 1rem;
+        vertical-align: top;
+        border-top: 1px solid #999 !important;
+    }
 
-  thead th {
-    vertical-align: bottom;
-    border-bottom: 1px solid #333 !important;
-    background-color: #eee;
-  }
+    thead th {
+        vertical-align: bottom;
+        border-bottom: 1px solid #333 !important;
+        background-color: #eee;
+    }
 
-  tbody+tbody {
-    border-top: 1px solid #666 !important;
-  }
+    tbody + tbody {
+        border-top: 1px solid #666 !important;
+    }
 }
