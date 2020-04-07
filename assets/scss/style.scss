@@ -63,6 +63,8 @@
 @import 'components/feature';
 @import 'components/hero-image';
 @import 'components/bg';
+@import 'components/cta-section';
+@import 'components/recent-posts';
 
 // Pages
 @import 'pages/services/page-services-list';
@@ -73,6 +75,7 @@
 @import 'pages/blog/blog-summary';
 @import 'pages/blog/blog-list';
 @import 'pages/blog/blog-single';
+@import 'pages/home-page';
 
 #TableOfContents ul ul {
     margin-bottom: 1rem;
@@ -85,6 +88,10 @@
 img.img-fluid {
     max-width: 100%;
     height: auto;
+}
+
+a.link-img:hover {
+    opacity: 0.7;
 }
 
 .page p {

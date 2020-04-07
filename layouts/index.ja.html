@@ -11,119 +11,199 @@
 {{ $reusablePages := $headless.Resources.ByType "page" }}
 {{ $reusablePages := sort $reusablePages ".Params.weight" }}
 {{ range first 1 $reusablePages }}
-{{ if .Content }}
-<div class="container pt-6 pt-md-10">
-  <div class="row">
-    <div class="col-12">
-      <div class="page-intro">
-        {{ .Content }}
-      </div>
-    </div>
-  </div>
-</div>
-{{ end }}
 <div id="home">
-  <div class="container pb-8">
-    <div class="row">
-      <div class="col-12 col-md-8 offset-md-2">
-        <p class="h4 mb-4">Apple Wallet や Google Pay に追加可能なクーポン、ポイントカード、スタンプカード、会員証、
-          イベントチケットを発行し、ファンを獲得し、集客を促進します。<a href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a></p>
-      </div>
-    </div>
-    <div class="row">
-      {{ range .Site.Data.jawalletpasses }}
-      {{ if .featured }}
-      <div class="col-12 col-md-6 col-lg-3 mb-2">
-        <a href="{{ .url }}" title="{{ .title }}">
-          <img class="img-fluid" src="{{ .img }}" alt="{{ .title }}" title="{{ .title }}" width="100%" />
-        </a>
-        <div class="mt-2">
-          <a href="{{ .url }}" title="{{ .title }}">
-            <h3 class="h4 text-primary mb-1">{{ .title }}</h3>
-          </a>
-          {{ .description }}
+  <section id="home-hero" class="home-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+          <p class="mt-2 mb-4 lead">KINCHAKU は、『スマホウォレットを活用した O2O クラウドサービス』です。 ウォレットパスを運用する上での一連の流れ（発行・配布・消込・解析）を
+            一括で管理、かんたんに運用できるツールを提供しています。</p>
         </div>
       </div>
-      {{end}}
-      {{end}}
     </div>
-  </div>
-  {{ end }}
+  </section>
 
-  <div class="bg-light">
-    <div class="container pt-8 pb-8 pb-md-14 pt-md-14">
-      <div class="row justify-content-start">
-        <div class="col-12">
-          <h2 class="text-center mb-3">{{ i18n "mainFeatures" }}</h2>
+  <section id="about-kinchaku">
+    <div class="container mb-4">
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+          <img class="img-fluid"
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/walletpass-cycle.png" />
         </div>
-        <div class="container">
-          <div class="row justify-content-start">
-            {{ range .Site.Data.jafeatures }}
-            {{ if .featured }}
-            <div class="col-12 col-md-6 col-lg-4 mb-2">
-              <h3 class="h4 text-primary">{{ .title }}</h3>
-              <div>
-                {{ .description }}
-                {{ if .pagelink}}<a href="{{ .pagelink }}" title="{{ .title}}">詳細</a>{{ end }}
-              </div>
-            </div>
-            {{end}}
-            {{end}}
+      </div>
+    </div>
+  </section>
+
+  <section class="wallet-pass mt-4">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-12 col-md-7">
+          <div class="text-center">
+            <h2 class="heading-2--white">ウォレットパスとは</h2>
+          </div>
+
+          <p class="wallet-pass__para">
+            iPhoneやiWatchにWallet、Androidの場合GooglePayという標準アプリがあります。
+          </p>
+          <p class="wallet-pass__para mb-4">
+            ウォレットアプリの中に追加できるクーポン、スタンプカード、ポイントカード、チケットや会員証などのことを 「ウォレットパス」 といいます。
+          </p>
+        </div>
+        <div class="col-12 col-md-4 col">
+          <img class="mx-auto d-block mt-1 mb-3"
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/pass-icons.png"
+            alt="ウォレットアプリのアイコンたち。iosとandoroidそれぞれ。" width="240" />
+          <img class="img-fluid"
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/pass-phones.png"
+            alt="iosとandoroidのウォレットパス画面のキャプチャ" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-1 mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="heading-2 my-2 text-center">
+            <span class="heading-2--block">KINCHAKUで発行する</span>
+            <span class="heading-2--block">ウォレットパスにはメリットがたくさん</span>
+          </h2>
+          <img
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/interface-screenshot.png"
+            alt="kinchakuで発行するウォレットパスがとにかくスムーズであることを表す画像" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+    <div class="container my-4">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h3 class="heading-4 mb-1 text-primary text-center" style="line-height: 2.9rem;">スマホ上だから無くさない！忘れない！</h3>
+          <p class="mb-3">
+            スマホのウォレットアプリで完結するため、これ以上カードを増やす必要はありません。紛失だったり忘れたりで、損をすることもなくなります。
+          </p>
+          <h3 class="heading-4 mb-1 text-primary text-center" style="line-height: 2.9rem;">標準アプリだから今スグ使ってもらえる！</h3>
+          <p class="mb-3">
+            専用のアプリをインストールするという面倒くささをカットすることができるので、より多くのユーザーに手にして頂けます。開発コストがかからないというのも大きなメリットの１つ。
+          </p>
+          <h3 class="heading-4 mb-1 text-primary text-center" style="line-height: 2.9rem;">時間や場所に合わせた通知を送れる！</h3>
+          <p class="mb-3">帰宅ラッシュ時やイベントの会場など、特定の時間や場所に基づいて通知を送ることができます。リピーターの獲得に有効な手段です。</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <img
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/feature-img-1.png"
+            alt="スマホ上だから無くさない！忘れない！" class="img-fluid" />
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col">&nbsp;</div>
+        <div class="col">
+          <a href="https://app.kinchaku.com/signup" class="btn btn-secondary btn-block btn-lg mt-3 mb-4"
+            title="無料で今すぐ試す">無料で今すぐ試す</a>
+        </div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-1 mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="heading-2 my-2 text-center">
+            <span class="heading-2--block">KINCHAKUで</span>
+            <span class="heading-2--block">発行できるパスの種類</span>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+          <p>Apple Wallet や Google Pay に追加可能なクーポン、ポイントカード、スタンプカード、会員証、
+            イベントチケットを発行し、ファンを獲得し、集客を促進します。<a href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container my-4">
+      <div class="row">
+        {{ range .Site.Data.jawalletpasses }}
+        {{ if .featured }}
+        <div class="col-12 col-md-6 col-lg-3 mb-2">
+          <h3 class="h4 text-primary mb-1 text-center"><a href="{{ .url }}" title="{{ .title }}">{{ .title }}</a></h3>
+          <a href="{{ .url }}" title="{{ .title }}" class="link-img">
+            <img class="img-fluid" src="{{ .img }}" alt="{{ .title }}" title="{{ .title }}" width="100%" />
+          </a>
+          <div class="mt-2 mb-3 text-center">
+            {{ .description }}
           </div>
         </div>
-        <div class="col-12 text-center mt-3">
-          <a class="button button-primary" href="{{ .Site.BaseURL }}features">{{ i18n "allFeatures" }}</a>
+        {{end}}
+        {{end}}
+      </div>
+    </div>
+  </section>
+  <section class="feature-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="heading-2 mt-2 mb-3 text-center">
+            <span class="heading-2--block">KINCHAKUなら</span>
+            <span class="heading-2--block">ユーザーの利用状況もすぐ可視化</span>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <img src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/pc-data.png"
+            alt="kinchakuのデータ解析部分の画面キャプチャ" class="img-fluid" width="100%">
+        </div>
+        <div class="col-12 col-md-6">
+          <p>KINCHAKUのダッシュボードでは、パスの発行数・パスのインストール数・パスの利用状況・日別の統計といった
+            必要な情報がきれいにまとめられています。これらのデータを分析し、
+            運用の改善を行うことで、さらなるリピーター獲得へとつながります。
+          </p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container pb-8 pt-8 pb-md-8 pt-md-8">
-    <div class="row justify-content-center mb-3">
-      <div class="col-12 col-md-8 text-center">
-        <h3 class="h2"><b>最新ブログ</b></h3>
-      </div>
-    </div>
-    <div class="row justify-content-center page-blog-list">
-      {{ range first 2 .Site.Taxonomies.tags.featured }}
-      {{ partial "recent-posts" . }}
-      {{ end }}
-    </div>
-  </div>
-  <div class="bg-light">
-    <div class="container pb-8 pt-8 pb-md-8 pt-md-8">
+  </section>
+  <section>
+    <div class="container">
       <div class="row justify-content-center mb-3">
-        <div class="col-12 col-sm-8 col-md-8 text-center">
-          <h3 class="h2"><b>お知らせ</b></h3>
+        <div class="col-12 col-md-8 text-center">
+          <h2><b>最新ブログ</b></h2>
         </div>
       </div>
       <div class="row justify-content-center page-blog-list">
-        <div class="col-12 col-sm-8 col-md-8">
+        {{ range first 3 .Site.Taxonomies.tags.featured }}
+        {{ partial "recent-posts" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="bg-light">
+      <div class="container pb-8 pt-8 pb-md-8 pt-md-8">
+        <div class="row justify-content-center mb-3">
+          <div class="col-12 col-sm-8 col-md-8 text-center">
+            <h2><b>お知らせ</b></h2>
+          </div>
+        </div>
+        <div class="row justify-content-center page-blog-list">
+          <div class="col-12 col-sm-8 col-md-8">
 
-          {{ range first 3 .Site.Taxonomies.tags.news }}
-          {{ partial "news-list" . }}
-          {{ end }}
+            {{ range first 3 .Site.Taxonomies.tags.news }}
+            {{ partial "news-list" . }}
+            {{ end }}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+</div>
 
-  {{ range first 1 (after 1 $reusablePages) }}
-  <div class="strip bg-primary bg-cover bg-position-top bg-overlay"
-    style='background-image: url("{{ .Params.background | relURL }}");'>
-    <div class="container pt-8 pb-8 pb-md-12 pt-md-12">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 text-center text-white">
-          <h2>{{ .Title }}</h2>
-          <p>{{ .Content }}</p>
-          <a class="button button-white mt-3" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  {{ end }}
+{{ partial "cta-section.html" . }}
 
+{{ end }}
+{{ end }}
 
-  {{ end }}
-
-  {{ define "footer_js" }}
-  {{ end }}
+{{ define "footer_js" }}
+{{ end }}

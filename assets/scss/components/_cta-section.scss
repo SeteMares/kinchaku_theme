@@ -1,0 +1,17 @@
+.cta {
+    text-align: center;
+    background-color: $primary;
+    padding: 3rem 0;
+
+    &__text {
+        display: inline-block;
+        color: #fff;
+        font-size: 1.2rem;
+    }
+
+    &__btn {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

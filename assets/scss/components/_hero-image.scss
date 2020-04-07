@@ -78,14 +78,47 @@
     }
 }
 
+.page-home .hero-text {
+    h1 {
+        font-size: 2.2rem;
+        line-height: 1.5;
+        @include media-breakpoint-up(md) {
+            font-size: 2.75rem;
+            width: 50%;
+        }
+        @include media-breakpoint-between(xs, sm) {
+            width: 100%;
+            font-size: 1.95rem;
+        }
+    }
+}
+
 .hero-image-fullscreen {
-    height: 103vh;
+    height: 102vh;
 }
 
 .hero-image-setheight {
     height: 480px;
 }
 
-.hero-image-blend-overlay {
-    // background-blend-mode: overlay;
+.page-home .hero-image {
+    @include media-breakpoint-up(md) {
+        background-image: url('https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/kinchaku-hero-img-large.jpg');
+    }
+
+    @include media-breakpoint-between(xs, sm) {
+        background-image: linear-gradient($primary, $accent);
+        transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+}
+
+.page-home .hero-image h1 {
+    @include media-breakpoint-between(xs, sm) {
+        color: #fff;
+        text-align: center;
+    }
+}
+
+.page-home .home-hero p {
+    font-size: 1.1rem;
 }
