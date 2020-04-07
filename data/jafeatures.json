@@ -1,0 +1,44 @@
+[
+    {
+        "title": "ロイヤルティ管理",
+        "description": "Apple WalletやGoogle Pay Walletに追加できる会員証、クーポン、スタンプカード、ポイントカードの発行。継続利用の可視化。",
+        "featured": true
+    },
+    {
+        "title": "収益管理",
+        "description": "複雑な経常収益や非経常収益の認識、 売掛金回収、POSデータや売上管理業務を効率化する機能。",
+        "featured": true
+    },
+    {
+        "title": "取引先管理",
+        "description": "顧客や取引先の情報を直感的に管理できる取引先データベース。 外部サービスから連絡先データの読み込み、一元管理が可能。",
+        "featured": true
+    },
+    {
+        "title": "プロダクト管理",
+        "description": "一回売り切りの商品、サービスの利用プランや定期収益のもとになる課金プランの管理機能。",
+        "featured": true
+    },
+    {
+        "title": "埋め込みウィジェット",
+        "description": "ウェブサイトに埋め込みできる、継続課金サービスの販売ツール。ウェブサイト上で会員証・スタンプカード・クーポン等を配布できるウィジェット。",
+        "featured": true
+    },
+    {
+        "title": "モバイルアプリ",
+        "description": "様々なウォレットパスをスキャンしたり、利用状況確認するためのスマートフォンアプリ。",
+        "featured": true,
+        "appstores": true,
+        "pagelink": "/features/mobile-app/"
+    },
+    {
+        "title": "インテグレーション",
+        "description": "Freee、Mailchimp、Hubspot、Google、Microsoftような外部サービスとシームレスに連動できるインテグレーション機能。",
+        "featured": true
+    },
+    {
+        "title": "決済",
+        "description": "Stripe Connectによるクレジットカード決済機能。初期費用不要で、申し込みから最短2営業日で利用することが可能。",
+        "featured": true
+    }
+]

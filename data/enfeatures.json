@@ -1,0 +1,49 @@
+[
+    {
+        "title": "Loyalty program",
+        "description": "Design native and unique membership cards, discount coupons, stamp cards and point cards for Apple Wallet and Google Pay. Provide 100% mobile experience to your customer and spare them from downloading new apps.",
+        "featured": true
+    },
+    {
+        "title": "Sell event tickets",
+        "description": "Create an event listing page or embed checkout widget to your website with built-in payment processing and analytics. Let your attendees pay online and get paid out quickly to your bank account.",
+        "featured": true
+    },
+    {
+        "title": "Customer management",
+        "description": "Keep track of your customers in powerful and intuitive CRM. Easily connect import and export any contact information. Slice and filter customer data to get the most complex business insights.",
+        "featured": true
+    },
+    {
+        "title": "Revenue management",
+        "description": "Keep track of recurring and non-recurring revenue as well as offline sales. Issue refunds, send invoices. Every transaction is written to the secure database with a full audit trail.",
+        "featured": true
+    },
+    {
+        "title": "Product management",
+        "description": "Create Products or Services catalog with various Pricing Plans and add-on items to sell them online via Kinchaku widget. Provide your customers with easy and secure checkout and receive payments to your bank account (only Japan).",
+        "featured": true
+    },
+    {
+        "title": "Embedded widget",
+        "description": "Distribute discount coupons, stamp cards, membership cards, point cards, sell admission and event ticket or collect subscription payments in a widget that can be embedded to any web site. Collect statistics, drive customer insights and generate traffic.",
+        "featured": true
+    },
+    {
+        "title": "Mobile App",
+        "description": "Native Android and iOS application for scanning passes with tickets, stamp cards, discount coupons, membership and point cards. Collect statistics, track usage and make sure only authorized parties can validate passes.",
+        "featured": true,
+        "appstores": true,
+        "pagelink": "/en/features/mobile-app/"
+    },
+    {
+        "title": "Integrations",
+        "description": "Kinchaku works with external services such as Freee accounting software, Mailchimp mail marketing tool, Hubspot inbound marketing and sales software, Stripe payment processing provider and Google.",
+        "featured": true
+    },
+    {
+        "title": "Payment processing",
+        "description": "Kinchaku uses Stripe - world-leading payment processing software, to securely send and receive payments. This allows us to provide you with low commission, easy verification, and fast payouts.",
+        "featured": true
+    }
+]

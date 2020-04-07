@@ -1,0 +1,30 @@
+[
+    {
+        "title": "スタンプカード",
+        "description": "もっともっと愛されるお店に。「プレミアム感」を演出し、店舗のファンを獲得",
+        "featured": true,
+        "img": "https://s3-ap-northeast-1.amazonaws.com/kinchaku-static-site/uploads/stampcard.jpg",
+        "url": "/walletpass/stamp-card/"
+    },
+    {
+        "title": "クーポン",
+        "description": "紛失や忘れを減らし、リピート集客を実現する割引券・クーポン",
+        "featured": true,
+        "img": "https://s3-ap-northeast-1.amazonaws.com/kinchaku-static-site/uploads/couponpass.jpg",
+        "url": "/walletpass/coupon/"
+    },
+    {
+        "title": "チケット",
+        "description": "スマホのウォレットに追加可能なイベントチケットの作成・販売・配布ができるサービス",
+        "featured": true,
+        "img": "/walletpass/eventticket.jpg",
+        "url": "/walletpass/event-pass/"
+    },
+    {
+        "title": "会員証",
+        "description": "利用者と運営側のどちらにも優しい、カードを持たなくていい会員証",
+        "featured": true,
+        "img": "/walletpass/memberpass.jpg",
+        "url": "/walletpass/member-pass/"
+    }
+]
