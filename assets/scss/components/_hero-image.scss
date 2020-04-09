@@ -122,3 +122,43 @@
 .page-home .home-hero p {
     font-size: 1.1rem;
 }
+
+.page-walletpass-single {
+    .walletpass-hero {
+        height: 36vh;
+        position: relative;
+        padding-top: 60px;
+    }
+
+    .walletpass-hero img {
+        overflow-y: hidden;
+        position: absolute;
+        clip: rect(0px, 400px, 201px, 0px);
+        padding-top: 0.4rem;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    .walletpass-hero .hero-text {
+        padding-top: 1.2rem;
+        display: inline-block;
+    }
+
+    .walletpass-hero h1 {
+        font-size: 2rem;
+        @include media-breakpoint-down(sm) {
+            html {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .walletpass-hero p {
+        @include media-breakpoint-down(sm) {
+            html {
+                font-size: 1rem;
+            }
+        }
+    }
+}

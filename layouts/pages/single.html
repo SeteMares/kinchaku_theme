@@ -1,9 +1,16 @@
 {{ define "header_css" }}{{ end }}
-{{ define "body_classes" }}page-pages-single{{ end }}
+{{ define "body_classes" }}pages-single{{ end }}
 {{ define "header_classes" }}{{ end }}
 
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
+<div id="hero" class="hero-image">
+    <div class="container ">
+        <div class="hero-text">
+            <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+            <p class="text-white">{{ .Params.heroSubHeading }}</p>
+        </div>
+    </div>
+</div>
 {{ .Content }}
 {{ end }}
