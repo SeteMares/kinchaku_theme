@@ -4,15 +4,14 @@
 
 {{ define "main" }}
 
-<div id="hero" class="hero-image hero-image-setheight"
-  style="background-image: url('{{ .Params.heroBackground | relURL }}')">
-  <div class="container ">
-    <div class="hero-text">
-      <h1>{{ .Params.heroHeading }}</h1>
-      {{ if .Params.heroSubHeading }}
-      <p>{{ .Params.heroSubHeading }}</p>
-      {{ end }}
-      {{ partial "breadcrumb" . }}
+<div class="taxonomy-hero strip-primary">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col align-self-center">
+        <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+        <p class="text-white mb-0">{{ .Params.heroSubHeading }}</p>
+        {{ partial "breadcrumb" . }}
+      </div>
     </div>
   </div>
 </div>

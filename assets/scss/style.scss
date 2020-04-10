@@ -65,6 +65,7 @@
 @import 'components/bg';
 @import 'components/cta-section';
 @import 'components/recent-posts';
+@import 'components/taxonomy-list';
 
 // Pages
 @import 'pages/services/page-services-list';
@@ -73,7 +74,6 @@
 @import 'pages/walletpass/walletpass-summary';
 @import 'pages/walletpass/page-walletpass-single';
 @import 'pages/blog/blog-summary';
-@import 'pages/blog/taxonomy-list';
 @import 'pages/blog/blog-single';
 @import 'pages/home-page';
 
@@ -85,7 +85,8 @@
     margin-left: 1rem;
 }
 
-img.img-fluid {
+img.img-fluid,
+.page-manual-single img {
     max-width: 100%;
     height: auto;
 }

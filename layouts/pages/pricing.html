@@ -26,7 +26,17 @@
 {{ end }}
 
 {{ define "main" }}
-{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "section" .Section "content" .)}}
+
+<div class="taxonomy-hero strip-primary">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col align-self-center">
+        <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+        <p class="text-white">{{ .Params.heroSubHeading }}</p>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container pt-4 pt-md-10 pb-4 pb-md-10">
   <div class="row justify-content-start">
     <div class="col-12">
@@ -44,17 +54,7 @@
     </div>
   </div>
 </div>
-<div class="strip bg-primary bg-cover bg-position-top bg-overlay">
-  <div class="container pt-8 pb-8 pb-md-12 ">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 text-center text-white">
-        <h3 class="mb-3">新感覚で顧客とつながるスマホウォレットマーケティングを始めませんか？</h3>
-        <a class="button button-white" href="https://app.kinchaku.com/signup"
-          title="{{ .Params.heroSubHeading }}">無料アカウント登録</a>
-      </div>
-    </div>
-  </div>
-</div>
+{{ partial "cta-section.html" . }}
 {{ end }}
 
 {{ define "footer_js" }}

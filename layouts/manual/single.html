@@ -1,4 +1,4 @@
-{{ define "header_css" }}{{ end }} {{ define "body_classes" }}page-blog-single{{ end }}
+{{ define "header_css" }}{{ end }} {{ define "body_classes" }}page-manual-single{{ end }}
 {{ define "header_classes" }}{{ end }}
 
 {{ define "meta_tags" }}
@@ -68,18 +68,19 @@
 
 {{ define "main" }}
 
-<div id="hero" class="hero-image hero-image-setheight"
-    style="background-image: url('{{ .Params.heroBackground | relURL }}')">
-    <div class="container ">
-        <div class="hero-text">
-            <h1>{{ .Params.heroHeading }}</h1>
-            {{ if .Params.heroSubHeading }}
-            <p>{{ .Params.heroSubHeading }}</p>
-            {{ end }}
-            {{ partial "breadcrumb" . }}
+
+<div class="taxonomy-hero strip-primary">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col align-self-center">
+                <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+                <p class="text-white mb-0">{{ .Params.heroSubHeading }}</p>
+                {{ partial "breadcrumb" . }}
+            </div>
         </div>
     </div>
 </div>
+
 <div class="container pt-4 pt-md-10 pb-4">
     <div class="row">
         <div class="col-12 col-md-4">
