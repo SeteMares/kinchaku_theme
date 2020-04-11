@@ -1,24 +1,88 @@
 {{ define "header_css" }}{{ end }}
-{{ define "body_classes" }}page-pages-aboutlayout{{ end }}
+{{ define "body_classes" }}page-single{{ end }}
 {{ define "header_classes" }}{{ end }}
 
-{{ define "main" }}
-{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+{{ define "meta_tags" }}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="KINCHAKU" />
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}">
+<meta property="og:description" content="{{ .Params.Description }}" />
 
-<div id="home" class="container pt-8 pb-8 pt-md-10 pb-md-10">
-  <div class="row justify-content-center">
-    {{ range .Site.Data.features }}
-    <div class="col-12 col-md-6 col-lg-4 mb-2">
-      <div class="feature">
-        {{ if .image }}<div class="feature-image"><img alt="{{ .title }} logo" src="{{ $.Site.BaseURL }}{{ .image }}" /></div> {{ end }}
-        <h2 class="feature-title">{{ .title }}</h2>
-        <div class="feature-content">{{ .description }}</div>
+{{ with .Site.Params.googlever.id }}
+<meta name="google-site-verification" content="{{ . }}" />
+{{ end }}
+
+{{ with .Site.Params.facebook.appid }}
+<meta property="fb:app_id" content="{{ . }}" />
+{{ end }}
+
+{{ with .Site.Language }}
+<meta property="og:locale" content="{{ .Lang }}" />
+{{ end }}
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@KINCHAKU_BI">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ .Params.Description }}">
+
+{{ $dateFormat := default "yyyy-MM-dd" (index .Site.Params "date_format") }}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "name": "{{ .Title }} | KINCHAKU",
+    "description": "{{ .Params.Description }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "SETE MARES",
+      "url": "https://setemares.co",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.Params.smlogo.url }}",
+        "width": "{{ .Site.Params.smlogo.width }}",
+        "height": "{{ .Site.Params.smlogo.height }}"
+      }
+    }
+  }
+
+</script>
+{{ end }}
+
+{{ define "main" }}
+
+<div class="taxonomy-hero strip-primary">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col align-self-center">
+        <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+        <p class="text-white">{{ .Params.heroSubHeading }}</p>
       </div>
     </div>
-    {{end}}
   </div>
 </div>
 
-{{ .Content }}
+<div class="container pt-4 pt-md-10 pb-4 pb-md-10">
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+      <div class="services service-single">
+        <section class="section-main">
+          {{ .Content }}
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
 
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if .Site.IsServer }}
+<script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+{{ else }}
+<script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
 {{ end }}
