@@ -30,7 +30,16 @@
 {{ $dateFormat := default "yyyy-MM-dd" (index .Site.Params "date_format") }}
 {{ end }}
 {{ define "main" }}
-{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "section" .Section "content" .)}}
+<div class="taxonomy-hero strip-primary">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col align-self-center">
+        <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+        <p class="text-white mb-0">{{ .Params.heroSubHeading }}</p>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container pt-4 pt-md-10 pb-4 pb-md-10">
   <div class="row justify-content-center md-auto">
     <div class="col-12 col-md-10">

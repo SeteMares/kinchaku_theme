@@ -5,18 +5,8 @@
         "featured": true
     },
     {
-        "title": "収益管理",
-        "description": "複雑な経常収益や非経常収益の認識、 売掛金回収、POSデータや売上管理業務を効率化する機能。",
-        "featured": true
-    },
-    {
         "title": "取引先管理",
         "description": "顧客や取引先の情報を直感的に管理できる取引先データベース。 外部サービスから連絡先データの読み込み、一元管理が可能。",
-        "featured": true
-    },
-    {
-        "title": "プロダクト管理",
-        "description": "一回売り切りの商品、サービスの利用プランや定期収益のもとになる課金プランの管理機能。",
         "featured": true
     },
     {
@@ -33,7 +23,7 @@
     },
     {
         "title": "インテグレーション",
-        "description": "Freee、Mailchimp、Hubspot、Google、Microsoftような外部サービスとシームレスに連動できるインテグレーション機能。",
+        "description": "Freee、Google、Microsoftような外部サービスとシームレスに連動できるインテグレーション機能。",
         "featured": true
     },
     {
