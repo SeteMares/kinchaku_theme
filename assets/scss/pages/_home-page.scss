@@ -143,3 +143,9 @@
         z-index: -1;
     }
 }
+
+.page-home .heading-4 {
+    @include media-breakpoint-down(xs) {
+        font-size: 1.15rem;
+    }
+}
