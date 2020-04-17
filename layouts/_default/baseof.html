@@ -43,6 +43,9 @@
   {{ with .Site.Params.googlever.id }}
   <meta name="google-site-verification" content="{{ . }}" />
   {{ end }}
+  {{ with .Site.Params.msver.id }}
+  <meta name="msvalidate.01" content="{{ . }}" />
+  {{ end }}
   {{ with .Site.Params.facebook.appid }}
   <meta property="fb:app_id" content="{{ . }}" />
   {{ end }}
