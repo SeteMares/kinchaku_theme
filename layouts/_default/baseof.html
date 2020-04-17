@@ -33,12 +33,12 @@
   {{ with .Site.Params.homepage_meta_tags.meta_description }}
   <meta name="description" content="{{ . }}">
   {{ end }}
-  {{ end }}
-
+  {{ else }}
   {{ if .Params.Description }}
   <meta name="description" content="{{ .Params.Description }}">
   {{ else }}
   <meta name="description" content="{{ .Summary }}">
+  {{ end }}
   {{ end }}
   {{ with .Site.Params.googlever.id }}
   <meta name="google-site-verification" content="{{ . }}" />
