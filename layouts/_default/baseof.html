@@ -12,6 +12,13 @@
   {{ else }}
   <meta name="robots" content="index, follow" />
   {{ end }}
+
+  {{ if .Site.IsServer }}
+  {{ partial "analytics-prod.html" . }}
+  {{ else }}
+  {{ partial "analytics-prod.html" . }}
+  {{ end }}
+
   {{ if or (eq .Kind "home") (eq .Kind "page")}}
   {{ if isset .Params "canonical" }}
   <link rel="canonical" href="{{ .Params.Canonical}}" />
@@ -96,9 +103,6 @@
   {{ else }}
   <script type="text/javascript" src="{{ ($scripts | minify | fingerprint).RelPermalink }}"></script>
   {{ end }}
-
-  {{ partial "google-analytics.html" . }}
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58a5816388fb73f7"></script>
 </body>
 
 </html>
