@@ -1,0 +1,30 @@
+{{ define "meta_tags" }}
+
+<meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+<meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+<meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+<meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+<meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+<meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+<meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+{{ with .Site.Language }}
+<meta property="og:locale" content="{{ .Lang }}" />{{ end }}
+{{ if .IsHome }}
+{{ with .Site.Params.homepage_meta_tags.meta_description }}
+<meta name="description" content="{{ . }}">{{ end }}
+{{ else }}
+{{ if .Params.Description }}
+<meta name="description" content="{{ .Params.Description }}">
+{{ else }}
+<meta name="description" content="{{ .Summary }}">{{ end }}
+{{ end }}
+{{ with .Site.Params.googlever.id }}
+<meta name="google-site-verification" content="{{ . }}" />{{ end }}
+{{ with .Site.Params.msver.id }}
+<meta name="msvalidate.01" content="{{ . }}" />{{ end }}
+{{ with .Site.Params.facebook.appid }}
+<meta property="fb:app_id" content="{{ . }}" />{{ end }}
+{{ end }}
+{{ if .IsHome }}{{ partial "jsonld/website" . }}{{ end }}
+{{ block "meta_tags" . }}{{end}}

@@ -7,17 +7,19 @@
   <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  {{ if .Site.IsServer }}
+  {{ partial "analytics-dev.html" . }}
+  {{ else }}
+  {{ partial "analytics-prod.html" . }}
+  {{ end }}
+
   {{ if and (eq .Kind "taxonomy") (eq .Type "categories")}}
   <meta name="robots" content="noindex, follow" />
   {{ else }}
   <meta name="robots" content="index, follow" />
   {{ end }}
 
-  {{ if .Site.IsServer }}
-  {{ partial "analytics-prod.html" . }}
-  {{ else }}
-  {{ partial "analytics-prod.html" . }}
-  {{ end }}
+  {{ partial "meta-tags.html" . }}
 
   {{ if or (eq .Kind "home") (eq .Kind "page")}}
   {{ if isset .Params "canonical" }}
@@ -26,42 +28,6 @@
   <link rel="canonical" href="{{ .Permalink}}" />
   {{ end }}
   {{ end }}
-  {{ define "meta_tags" }}
-  <meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
-  <meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
-  <meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
-  <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
-  <meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
-  <meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
-  <meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
-  <meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
-
-  {{ if .IsHome }}
-  {{ with .Site.Params.homepage_meta_tags.meta_description }}
-  <meta name="description" content="{{ . }}">
-  {{ end }}
-  {{ else }}
-  {{ if .Params.Description }}
-  <meta name="description" content="{{ .Params.Description }}">
-  {{ else }}
-  <meta name="description" content="{{ .Summary }}">
-  {{ end }}
-  {{ end }}
-  {{ with .Site.Params.googlever.id }}
-  <meta name="google-site-verification" content="{{ . }}" />
-  {{ end }}
-  {{ with .Site.Params.msver.id }}
-  <meta name="msvalidate.01" content="{{ . }}" />
-  {{ end }}
-  {{ with .Site.Params.facebook.appid }}
-  <meta property="fb:app_id" content="{{ . }}" />
-  {{ end }}
-  {{ with .Site.Language }}
-  <meta property="og:locale" content="{{ .Lang }}" />
-  {{ end }}
-  {{ end }}
-
-  {{ block "meta_tags" . }}{{end}}
 
   <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
 
@@ -71,15 +37,11 @@
   {{ else }}
   {{ $style := resources.Get "scss/style.scss" | toCSS (dict "targetPath" "css/style.css" "enableSourceMap" false) }}
   <link rel="stylesheet" href="{{ ($style | minify | fingerprint).RelPermalink }}">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
   {{ end }}
 
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
   {{ block "header_css" . }}{{ end }}
-  <script
-    id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/67b5b5662f7663525252b92fb/0e608064e0e1ec7f444b33a25.js");</script>
 </head>
 
 <body class="page {{ block "body_classes" . }}{{ end }}">

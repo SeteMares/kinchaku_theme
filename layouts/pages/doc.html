@@ -2,54 +2,6 @@
 {{ define "body_classes" }}page-single{{ end }}
 {{ define "header_classes" }}{{ end }}
 
-{{ define "meta_tags" }}
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{ .Title }}">
-<meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:site_name" content="KINCHAKU" />
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}">
-<meta property="og:description" content="{{ .Params.Description }}" />
-
-{{ with .Site.Params.googlever.id }}
-<meta name="google-site-verification" content="{{ . }}" />
-{{ end }}
-
-{{ with .Site.Params.facebook.appid }}
-<meta property="fb:app_id" content="{{ . }}" />
-{{ end }}
-
-{{ with .Site.Language }}
-<meta property="og:locale" content="{{ .Lang }}" />
-{{ end }}
-
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@KINCHAKU_BI">
-<meta name="twitter:title" content="{{ .Title }}">
-<meta name="twitter:description" content="{{ .Params.Description }}">
-
-{{ $dateFormat := default "yyyy-MM-dd" (index .Site.Params "date_format") }}
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "WebPage",
-    "name": "{{ .Title }} | KINCHAKU",
-    "description": "{{ .Params.Description }}",
-    "publisher": {
-      "@type": "Organization",
-      "name": "KINCHAKU INC.",
-      "url": "https://kinchaku.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "{{ .Site.Params.smlogo.url }}",
-        "width": "{{ .Site.Params.smlogo.width }}",
-        "height": "{{ .Site.Params.smlogo.height }}"
-      }
-    }
-  }
-
-</script>
-{{ end }}
-
 {{ define "main" }}
 
 <div class="taxonomy-hero strip-primary">

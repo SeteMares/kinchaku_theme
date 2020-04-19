@@ -1,68 +1,68 @@
 ul.social {
-  height: inherit;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  justify-content: flex-start;
-
-  svg {
-    fill: currentColor;
-    height: 24px;
-    width: 24px;
-  }
-
-  li {
+    height: inherit;
+    display: flex;
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
-    margin-right: 20px;
+    align-items: center;
+    justify-content: flex-start;
 
-    &:last-of-type {
-      margin: 0;
+    svg {
+        fill: currentColor;
+        height: 24px;
+        width: 24px;
     }
 
-    a {
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: auto;
-      padding: 4px;
-      display: block;
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-right: 20px;
 
-      span {
-        font-size: 24px;
-      }
-    }
+        &:last-of-type {
+            margin: 0;
+        }
 
-    a:hover {
-      opacity: 0.7;
+        a {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: auto;
+            padding: 4px;
+            display: block;
+
+            span {
+                font-size: 24px;
+            }
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
     }
-  }
 }
 
 ul.social {
-  .social-instagram {
-    background-image: url('/social/instagram.svg');
-    width: 24px;
-    height: 24px;
-  }
+    .social-instagram {
+        background-image: url('https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/social-icons/instagram.svg');
+        width: 24px;
+        height: 24px;
+    }
 
-  .social-facebook {
-    background-image: url('/social/facebook.svg');
-    width: 24px;
-    height: 24px;
-  }
+    .social-facebook {
+        background-image: url('https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/social-icons/facebook.svg');
+        width: 24px;
+        height: 24px;
+    }
 
-  .social-twitter {
-    background-image: url('/social/twitter.svg');
-    width: 24px;
-    height: 24px;
-  }
+    .social-twitter {
+        background-image: url('https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/social-icons/twitter.svg');
+        width: 24px;
+        height: 24px;
+    }
 
-  .social-slack {
-    background-image: url('/social/slack.svg');
-    width: 24px;
-    height: 24px;
-  }
+    .social-slack {
+        background-image: url('https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/social-icons/slack.svg');
+        width: 24px;
+        height: 24px;
+    }
 }

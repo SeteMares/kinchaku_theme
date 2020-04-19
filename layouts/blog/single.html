@@ -1,70 +1,7 @@
 {{ define "header_css" }}{{ end }} {{ define "body_classes" }}page-blog-single{{ end }}
 {{ define "header_classes" }}{{ end }}
 
-{{ define "meta_tags" }}
-
-<meta property="article:author" content="{{ .Params.Author }}" />
-<meta name="description" content="{{ .Params.Description }}" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="{{ .Title }}" />
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:image" content="{{ .Params.heroBackground | absURL }}" />
-<meta property="og:description" content="{{ .Params.Description }}" />
-
-{{ with.Site.Params.googlever.id }}
-<meta name="google-site-verification" content="{{ . }}" />
-{{ end }}
-
-{{ with.Site.Params.facebook.appid }}
-<meta property="fb:app_id" content="{{ . }}" />
-{{ end }}
-
-{{ with.Site.Language }}
-<meta property="og:locale" content="{{ .Lang }}" />
-{{ end }}
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@KINCHAKU_BI" />
-<meta name="twitter:title" content="{{ .Params.heroHeading }}" />
-<meta name="twitter:description" content="{{ .Params.Description }}" />
-<meta name="twitter:image" content="{{ .Params.heroBackground | absURL }}" />
-{{ $dateFormat := default "yyyy-MM-dd" (index .Site.Params "date_format") }}
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org/",
-        "@type": "BlogPosting",
-        "headline": "{{ .Title }}",
-        "datePublished": "{{ .PublishDate.Format $dateFormat }}",
-        "dateCreated": "{{ .Date.Format $dateFormat }}",
-        "dateModified": "{{ .Lastmod.Format $dateFormat }}",
-        "description": "{{ .Params.Description }}",
-        "image": {
-            "@type": "ImageObject",
-            "url": "{{ .Params.heroBackground | absURL }}"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "{{ .Params.author }}"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "KINCHAKU",
-            "url": "https://kinchaku.com",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "{{ .Site.Params.smlogo.url }}",
-                "width": "{{ .Site.Params.smlogo.width }}",
-                "height": "{{ .Site.Params.smlogo.height }}"
-            },
-            "sameAs": [
-                "https://www.facebook.com/kinchaku/",
-                "https://twitter.com/KINCHAKU_BI"
-            ]
-        },
-        "articleBody": "{{ .Content | plainify }}"
-    }
-</script>
-{{ end }}
+{{ partial "jsonld/blogposting.html" . }}
 
 {{ define "main" }}
 <div id="hero" class="hero-image">

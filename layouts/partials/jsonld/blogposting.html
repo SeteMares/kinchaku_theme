@@ -1,0 +1,35 @@
+{{ $dateFormat := default "yyyy-MM-dd" (index .Site.Params "date_format") }}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "BlogPosting",
+        "headline": "{{ .Title }}",
+        "datePublished": "{{ .PublishDate.Format $dateFormat }}",
+        "dateCreated": "{{ .Date.Format $dateFormat }}",
+        "dateModified": "{{ .Lastmod.Format $dateFormat }}",
+        "description": "{{ .Params.Description }}",
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ .Params.heroBackground | absURL }}"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Params.author }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社KINCHAKU",
+            "url": "https://kinchaku.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ .Site.Params.smlogo.url }}",
+                "width": "{{ .Site.Params.smlogo.width }}",
+                "height": "{{ .Site.Params.smlogo.height }}"
+            },
+            "sameAs": [
+                "https://www.facebook.com/kinchaku/"
+            ]
+        },
+        "articleBody": "{{ .Content | plainify }}"
+    }
+</script>

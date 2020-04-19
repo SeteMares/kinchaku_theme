@@ -1,0 +1,19 @@
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "name": "{{ .Title }} | KINCHAKU",
+    "description": "{{ .Params.Description }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "KINCHAKU INC.",
+      "url": "https://kinchaku.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.Params.smlogo.url }}",
+        "width": "{{ .Site.Params.smlogo.width }}",
+        "height": "{{ .Site.Params.smlogo.height }}"
+      }
+    }
+  }
+</script>

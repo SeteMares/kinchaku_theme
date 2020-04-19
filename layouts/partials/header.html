@@ -1,13 +1,20 @@
-<div class='header header-absolute'>
-  <div class="container">
-    <div class="logo">
-      <a href="{{ "/" | absLangURL }}"><img alt="Figurit Homepage" src="{{ .Site.BaseURL }}images/logo.svg" /></a>
+<header>
+  <div class='header header-absolute'>
+    <div class="container">
+      <div class="logo">
+        <a href="{{ "/" | absLangURL }}" title="{{ .Site.Title }}">
+          <img alt="{{ .Site.Title }}" title="{{ .Site.Title }}"
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/logo.svg" />
+        </a>
+      </div>
+      <div class="logo-mobile">
+        <a href="{{ "/" | absLangURL }}" title="{{ .Site.Title }}">
+          <img alt="{{ .Site.Title }}" title="{{ .Site.Title }}"
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/logo-mobile.svg" />
+        </a>
+      </div>
+      {{ partial "main-menu.html" . }}
+      {{ partial "hamburger.html" . }}
     </div>
-    <div class="logo-mobile">
-      <a href="{{ "/" | absLangURL }}"><img alt="Figurit Homepage"
-          src="{{ .Site.BaseURL }}images/logo-mobile.svg" /></a>
-    </div>
-    {{ partial "main-menu.html" . }}
-    {{ partial "hamburger.html" . }}
   </div>
-</div>
+</header>
