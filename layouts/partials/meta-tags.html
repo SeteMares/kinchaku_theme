@@ -27,4 +27,5 @@
 <meta property="fb:app_id" content="{{ . }}" />{{ end }}
 {{ end }}
 {{ if .IsHome }}{{ partial "jsonld/website" . }}{{ end }}
+{{ if eq .Params.Slug "pricing" }}{{ partial "jsonld/webapplication" . }}{{ end }}
 {{ block "meta_tags" . }}{{end}}
