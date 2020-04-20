@@ -22,11 +22,6 @@
       <div class="services service-single">
         <section class="section-main">
           {{ .Content }}
-
-          {{ $currentLang := .Site.Language.Lang }}
-          {{ if eq $currentLang "ja" }}
-          {{ partial "contact-form-jp" . }}
-          {{ end }}
         </section>
       </div>
     </div>
