@@ -22,9 +22,11 @@
         <div class="col-12 col-md-8">
             <div class="blog blog-single">
                 <article class="content">{{.Content}}</article>
+                {{ if .Params.addthis }}
                 <div class="mb-1">
-                    <div class="addthis_inline_share_toolbox"></div>
+                    {{ partial "share-buttons" . }}
                 </div>
+                {{ end }}
             </div>
         </div>
     </div>

@@ -1,0 +1,21 @@
+<a class="resp-sharing-button__link ml-0"
+    href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}?pk_campaign=Share%20Button&pk_kwd=Facebook"
+    target="_blank" rel="noopener" aria-label="Facebook">
+    <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium">
+        <div aria-hidden="true" class="resp-sharing-button__icon">
+            <img src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/social-icons/facebook.svg"
+                alt="Facebook" />
+        </div>Facebook
+    </div>
+</a>
+
+<a class="resp-sharing-button__link" data-text="{{ .Params.Description }}" data-url="{{ .Permalink }}"
+    data-hashtags="kinchaku_fukuoka" data-related="KINCHAKU" target="_blank" rel="noopener" aria-label="Twitter"
+    href="https://twitter.com/intent/tweet?text={{ .Params.Description }}%20{{ .Permalink }}?pk_campaign=Share%20Button&pk_kwd=Twitter&amp;type=share">
+    <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium">
+        <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--circle">
+            <img src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/social-icons/twitter.svg"
+                alt="Twitter" />
+        </div>Twitter
+    </div>
+</a>

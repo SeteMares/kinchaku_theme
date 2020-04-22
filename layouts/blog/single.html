@@ -24,9 +24,11 @@
                         alt="{{ .Params.title }}" itemprop="url contentUrl">
                     {{.Content}}
                 </article>
+                {{ if .Params.addthis }}
                 <div class="mb-1">
-                    <div class="addthis_inline_share_toolbox"></div>
+                    {{ partial "share-buttons" . }}
                 </div>
+                {{ end }}
             </div>
             {{ if .Params.categories | len | lt 0 }}
             <hr class="my-3" />

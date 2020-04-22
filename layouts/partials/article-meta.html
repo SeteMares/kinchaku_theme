@@ -3,7 +3,7 @@
 <div class="article-meta">
   {{ if .Params.addthis }}
   <div class="mb-1">
-    <div class="addthis_inline_share_toolbox"></div>
+    {{ partial "share-buttons" . }}
   </div>
   {{ end }}
   <p class="text-muted mb-0" content="{{ .Date.Format $dateFormat }}">
