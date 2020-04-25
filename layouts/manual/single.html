@@ -25,9 +25,11 @@
                 <article class="content">
                     {{.Content}}
                 </article>
+                {{ if .Params.addthis }}
                 <div class="mb-1">
-                    <div class="addthis_inline_share_toolbox"></div>
+                    {{ partial "share-buttons" . }}
                 </div>
+                {{ end }}
             </div>
             {{ if .Params.categories }}
             <hr class="my-3" />
