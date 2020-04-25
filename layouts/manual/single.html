@@ -30,6 +30,25 @@
             </div>
         </div>
     </div>
+    {{ if .Params.categories }}
+    <hr class="my-3" />
+    <h4 class="text-muted mt-3 mb-3">関連記事</h4>
+    {{ end }}
+    {{ $page_link := .Permalink }}
+    {{ $categories := .Params.categories }}
+    {{ range $page := .Site.Pages }}
+    {{ $has_common_categories := intersect $categories .Params.categories | len | lt 0 }}
+    {{ if and $has_common_categories (ne $page_link $page.Permalink) (lt ($.Scratch.Get "$c") 3)}}
+    {{ $.Scratch.Add "$c" 1 }}
+    <section class="row">
+        <div class="col-12">
+            <ul class="list-unstyled">
+                {{ partial "related-manual" . }}
+            </ul>
+        </div>
+    </section>
+    {{ end }}
+    {{ end }}
     <div class="row mt-3">
         <div class="col-12">
             <div class="mx-auto">
