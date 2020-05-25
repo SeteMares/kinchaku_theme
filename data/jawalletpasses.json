@@ -26,5 +26,12 @@
         "featured": true,
         "img": "/walletpass/memberpass.jpg",
         "url": "/walletpass/member-pass/"
+    },
+    {
+        "title": "引換券",
+        "description": "特別なサービス・魅力的な体験の引換券をオンラインで販売し、ワクワクと一緒に店舗を訪れてもらう",
+        "featured": true,
+        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/walletpass/voucher-pass.png",
+        "url": "/walletpass/voucher/"
     }
 ]
