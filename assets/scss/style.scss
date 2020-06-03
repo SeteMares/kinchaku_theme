@@ -107,6 +107,20 @@ a.link-img:hover {
     margin-bottom: 1rem;
 }
 
+
+
+.yoshiki-h2 {
+  position: relative;
+  padding: 0.25em 0;
+}
+.yoshiki-h2:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: -webkit-linear-gradient(to right, rgb(48,63,159), transparent);
+  background: linear-gradient(to right, rgb(48,63,159), transparent);
+}
+
 // Display breakpoints for DEV
 // body:after {
 //   color: #000000;
