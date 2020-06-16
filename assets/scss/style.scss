@@ -23,6 +23,7 @@
 @import 'bootstrap/images';
 @import 'bootstrap/forms';
 @import 'bootstrap/input-group';
+@import "bootstrap/list-group";
 
 // @import "bootstrap/modal";
 // @import "bootstrap/code";
@@ -34,7 +35,6 @@
 // @import "bootstrap/jumbotron";
 // @import "bootstrap/alert";
 // @import "bootstrap/progress";
-// @import "bootstrap/list-group";
 // @import "bootstrap/close";
 // @import "bootstrap/carousel";
 // @import "bootstrap/print";
@@ -79,32 +79,32 @@
 @import 'pages/home-page';
 
 #TableOfContents ul ul {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 #TableOfContents ul ul ul {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 img.img-fluid,
 .page-manual-single img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 a.link-img:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .page p {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .service-single section h2,
 .service-single section h3,
 .service-single section h4 {
-    margin-top: 1.8rem;
-    margin-bottom: 1rem;
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 
