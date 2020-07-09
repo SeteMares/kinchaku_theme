@@ -1,0 +1,89 @@
+.page-demo-list {
+  h4 {
+    margin: auto;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #00bcd4;
+    text-decoration: none;
+  }
+
+  .card {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 100%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+  }
+  
+  .card-header {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 30px 0;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+  }
+
+  #header-color1 {
+    background-color: #398bca;
+  }
+
+  #header-color2 {
+    background-color: #ee4480;
+  }
+
+  #header-color3 {
+    background-color: #696969;
+  }
+
+  #header-color4 {
+    background-color: #5bbc6b;
+  }
+
+  #header-color5 {
+    background-color: #ffa500;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .kinchaku-button {
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: double 4px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    margin: 20px auto;
+    max-width: 300px; 
+  }
+  
+  .kinchaku-button:hover {
+    background: #fffbef;
+    cursor: pointer;
+    .btn-primary {
+      background-color: #fffbef;
+      border-color: #fffbef;
+    }
+  }
+
+  .btn-primary {
+    background-color: #fff;
+    border-color: #fff;
+    max-width: 100%;
+  }
+
+  .btn-primary:hover {
+    background-color: #fffbef;
+    border-color: #fffbef;
+  }
+}

@@ -1,0 +1,40 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-demo-list{{ end }}
+{{ define "header_classes" }}{{ end }}
+{{ define "meta_tags" }}
+<meta name="robots" content="noindex, nofollow" />
+{{ end }}
+
+{{ define "main" }}
+<div class="taxonomy-hero strip-primary">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col align-self-center">
+        <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+        <p class="text-white mb-0">{{ .Params.heroSubHeading }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="row">
+    {{ range .Pages.ByWeight }}
+      {{ .Render "summary" }}
+    {{ end }}
+  </div>
+</div>
+<div class="strip bg-primary bg-cover bg-position-top bg-overlay">
+  <div class="container pt-8 pb-8 pb-md-12 ">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center text-white">
+        <h3 class="mb-3">効果的に顧客維持の施策を実施できるクラウドサービスを今すぐ、無料で始めよう。</h3>
+        <a class="button button-white mb-0" href="https://app.kinchaku.com/signup"
+          title="{{ .Params.heroSubHeading }}">無料アカウント登録</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function(name,host,id,show,ctx){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;ctx[name].ready()};s.async=1;s.src=host+'/js?id='+id+(show ? '&show=true' : '');h.parentNode.insertBefore(s,h)})('aizu', 'https://dev.kinchaku.me/aizu', '90f143a1-67d2-478a-a640-5d10abd89a0b', true, this);
+</script>
+{{ end }}

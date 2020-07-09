@@ -1,0 +1,42 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-demo-list{{ end }}
+{{ define "header_classes" }}{{ end }}
+{{ define "meta_tags" }}
+<meta name="robots" content="noindex, nofollow" />
+{{ end }}
+
+{{ define "main" }}
+<div class="taxonomy-hero strip-primary">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col align-self-center">
+        <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container pt-4 pt-md-10 pb-4 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <div class="demo demo-single">
+        <div class="content">{{ .Content }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function(name,host,id,show,ctx){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;ctx[name].ready()};s.async=1;s.src=host+'/js?id='+id+(show ? '&show=true' : '');h.parentNode.insertBefore(s,h)})('aizu', 'https://dev.kinchaku.me/aizu', '90f143a1-67d2-478a-a640-5d10abd89a0b', true, this);
+</script>
+{{ partial "cta-section.html" . }}
+{{ end }}
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if .Site.IsServer }}
+<script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+{{ else }}
+<script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
+{{ end }}
