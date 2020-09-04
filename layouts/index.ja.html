@@ -11,45 +11,19 @@
 {{ $reusablePages := $headless.Resources.ByType "page" }}
 {{ $reusablePages := sort $reusablePages ".Params.weight" }}
 {{ range first 1 $reusablePages }}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div id="home">
-  <section id="home-hero" class="home-hero">
-    <div class="container">
+  <section>
+    <div class="container my-5">
       <div class="row">
-        <div class="col-12 col-md-8 offset-md-2">
-          <p class="mt-2 mb-4 lead">KINCHAKU は、『スマホウォレットを活用した O2O クラウドサービス』です。 ウォレットパスを運用する上での一連の流れ（発行・配布・消込・解析）を
-            一括で管理、かんたんに運用できるツールを提供しています。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about-kinchaku">
-    <div class="container mb-4">
-      <div class="row">
-        <div class="col-12 col-md-8 offset-md-2">
-          <img class="img-fluid"
-            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/walletpass-cycle.png" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="wallet-pass mt-4">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-12 col-md-7">
-          <div class="text-center">
-            <h2 class="heading-2--white">ウォレットパスとは</h2>
-          </div>
-
-          <p class="wallet-pass__para">
-            iPhoneやiWatchにWallet、Androidの場合GooglePayという標準アプリがあります。
-          </p>
-          <p class="wallet-pass__para mb-4">
-            ウォレットアプリの中に追加できるクーポン、スタンプカード、ポイントカード、チケットや会員証などのことを 「ウォレットパス」 といいます。
+        <div class="col-12 col-md-8">
+          <h2 class="heading-2">KINCHAKUがもたらす新しいお店の集客スタイル</h2>
+          <p>独自アプリに依存しない、ウォレットパスの発行とチケットや回数券​の販売が可能。</p>
+          <p>
+            パス通知を通じて顧客と繋がり、顧客が嫌がらないコミュニケーションをとることでロイヤルカスタマーになる集客が可能になる。
           </p>
         </div>
-        <div class="col-12 col-md-4 col">
+        <div class="col-12 col-md-4">
           <img class="mx-auto d-block mt-1 mb-3"
             src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/pass-icons.png"
             alt="ウォレットアプリのアイコンたち。iosとandoroidそれぞれ。" width="240" />
@@ -61,140 +35,174 @@
     </div>
   </section>
 
-  <section class="feature-1 mt-3">
-    <div class="container">
+  <section>
+    <div class="container my-5">
       <div class="row">
-        <div class="col-12">
-          <h2 class="heading-2 my-2 text-center">
-            <span class="heading-2--block">KINCHAKUで発行する</span>
-            <span class="heading-2--block">ウォレットパスにはメリットがたくさん</span>
-          </h2>
-          <img
-            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/interface-screenshot.png"
-            alt="kinchakuで発行するウォレットパスがとにかくスムーズであることを表す画像" class="img-fluid" />
-        </div>
-      </div>
-    </div>
-    <div class="container my-4">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <h3 class="heading-4 mb-1 text-primary text-center" style="line-height: 2.9rem;">スマホ上だから無くさない！忘れない！</h3>
-          <p class="mb-3">
-            スマホのウォレットアプリで完結するため、これ以上カードを増やす必要はありません。紛失だったり忘れたりで、損をすることもなくなります。
+        <div class="col-12 col-md-8">
+          <h2 class="heading-2">手軽に使える販促ツール</h2>
+          <p>
+            SNS、メール、自社サイト、QRコードで共有可能なクーポン・ギフトカード・ポイントカード・スタンプカードを直感的な操作で作成できる。
           </p>
-          <h3 class="heading-4 mb-1 text-primary text-center" style="line-height: 2.9rem;">標準アプリだから今スグ使ってもらえる！</h3>
-          <p class="mb-3">
-            専用のアプリをインストールするという面倒くささをカットすることができるので、より多くのユーザーに手にして頂けます。開発コストがかからないというのも大きなメリットの１つ。
+          <p>
+            会員申請管理も一つのサービスで実現。お店の業務を電子化してコストを削減＆業務簡略化。
           </p>
-          <h3 class="heading-4 mb-1 text-primary text-center" style="line-height: 2.9rem;">時間や場所に合わせた通知を送れる！</h3>
-          <p class="mb-3">帰宅ラッシュ時やイベントの会場など、特定の時間や場所に基づいて通知を送ることができます。リピーターの獲得に有効な手段です。</p>
         </div>
-        <div class="col-12 col-md-6">
-          <img
-            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/feature-img-1.png"
-            alt="スマホ上だから無くさない！忘れない！" class="img-fluid" />
+        <div class="col-12 col-md-4">
+          <img class="mx-auto d-block mt-1 mb-3"
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/pass-icons.png"
+            alt="ウォレットアプリのアイコンたち。iosとandoroidそれぞれ。" width="240" />
+          <img class="img-fluid"
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/pass-phones.png"
+            alt="iosとandoroidのウォレットパス画面のキャプチャ" />
         </div>
-      </div>
-      <div class="row align-items-center">
-        <div class="col">&nbsp;</div>
-        <div class="col">
-          <a href="https://app.kinchaku.com/signup" class="btn btn-secondary btn-block btn-lg mt-4 mb-4"
-            title="無料で今すぐ試す">無料で今すぐ試す</a>
-        </div>
-        <div class="col">&nbsp;</div>
       </div>
     </div>
   </section>
 
-  <section class="feature-1 mt-3">
-    <div class="container">
+  <section>
+    <div class="container my-5">
       <div class="row">
         <div class="col-12">
-          <h2 class="heading-2 my-2 text-center">
-            <span class="heading-2--block">KINCHAKUで</span>
-            <span class="heading-2--block">発行できるパスの種類</span>
-          </h2>
+          <h2 class="heading-2 text-center">KINCHAKUの特徴</h2>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-8 offset-md-2">
-          <p>Apple Wallet や Google Pay に追加可能なクーポン、ポイントカード、スタンプカード、会員証、
-            イベントチケットを発行し、ファンを獲得し、集客を促進します。<a href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a></p>
+        <div class="col-12 col-md-4 text-center">
+          <span class="material-icons text-muted" style="font-size: 80px;">account_circle</span>
+          <h3 class="text-primary">店舗集客</h3>
+          <p>ああああああああああああああああああああああああ</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <span class="material-icons text-muted" style="font-size: 80px;">laptop_mac</span>
+          <h3 class="text-primary">顧客管理</h3>
+          <p>ああああああああああああああああああああああああ</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <span class="material-icons text-muted" style="font-size: 80px;">insights</span>
+          <h3 class="text-primary">利用データ分析</h3>
+          <p>ああああああああああああああああああああああああ</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <span class="material-icons text-muted" style="font-size: 80px;">cached</span>
+          <h3 class="text-primary">簡単かつ低コスト</h3>
+          <p>ああああああああああああああああああああああああ</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <span class="material-icons text-muted" style="font-size: 80px;">tap_and_play</span>
+          <h3 class="text-primary">パス通知</h3>
+          <p>ああああああああああああああああああああああああ</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <span class="material-icons text-muted" style="font-size: 80px;">qr_code_2</span>
+          <h3 class="text-primary">ウォレット対応</h3>
+          <p>ああああああああああああああああああああああああ</p>
         </div>
       </div>
     </div>
-    <div class="container my-4">
+  </section>
+
+  <section>
+    <div class="container my-5">
       <div class="row">
-        {{ range .Site.Data.jawalletpasses }}
-        {{ if .featured }}
-        <div class="col-12 col-md-6 col-lg-4 mb-2">
-          <h3 class="h4 text-primary mb-1 text-center"><a href="{{ .url }}" title="{{ .title }}">{{ .title }}</a></h3>
-          <a href="{{ .url }}" title="{{ .title }}" class="link-img">
-            <img class="img-fluid" src="{{ .img }}" alt="{{ .title }}" title="{{ .title }}" width="100%" />
+        <div class="col-12">
+          <h2 class="heading-2 text-center">主な機能</h2>
+        </div>
+        <div class="card-deck m-2">
+          <div class="card">
+            <div class="card-body text-center">
+              <h4 class="card-title">発行</h4>
+              <p class="card-text">デジタルパス発行</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center">
+              <h4 class="card-title">配布</h4>
+              <p class="card-text">多様な配布方法</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center">
+              <h4 class="card-title">消込</h4>
+              <p class="card-text">加盟店用スキャンアプリ</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center">
+              <h4 class="card-title">解析</h4>
+              <p class="card-text">顧客データ・利用データの可視化</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center">
+              <h4 class="card-title">発信</h4>
+              <p class="card-text">カスタム通知</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body text-center">
+              <h4 class="card-title">安心</h4>
+              <p class="card-text">手厚いサポート</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center mt-2 my-0">
+          <a href="/functions/">全ての機能をみる</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="heading-2 text-center">業種に合わせた活用方法</h2>
+        </div>
+        <div class="card-deck m-2">
+          <div class="card">
+            <a href="/usecase/#usecase1">
+              <img class="img-fluid mb-1" src="/images/kanpai.jpg" alt="飲食店" title="飲食店" width="100%" height="100%" />
+              <div class="card-body text-center">
+                <h4 class="card-title">飲食店</h4>
+              </div>
           </a>
-          <div class="mt-2 mb-3 text-center">
-            {{ .description }}
+          </div>
+
+          <div class="card">
+            <a href="/usecase/#usecase2">
+              <img class="img-fluid mb-1" src="/images/kanpai.jpg" alt="飲食店" title="飲食店" width="100%" height="100%" />
+              <div class="card-body text-center">
+                <h4 class="card-title">アパレル</h4>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a href="/usecase/#usecase3">
+              <img class="img-fluid mb-1" src="/images/kanpai.jpg" alt="飲食店" title="飲食店" width="100%" height="100%" />
+              <div class="card-body text-center">
+                <h4 class="card-title">ドラッグストア</h4>
+              </div>
+            </a>
           </div>
         </div>
-        {{end}}
-        {{end}}
       </div>
     </div>
   </section>
-  <section class="feature-1 mb-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="heading-2 mt-2 mb-3 text-center">
-            <span class="heading-2--block">KINCHAKUなら</span>
-            <span class="heading-2--block">ユーザーの利用状況もすぐ可視化</span>
-          </h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <img src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/pc-data.png"
-            alt="kinchakuのデータ解析部分の画面キャプチャ" class="img-fluid mb-3" width="100%">
-        </div>
-        <div class="col-12 col-md-6">
-          <p>KINCHAKUのダッシュボードでは、パスの発行数・パスのインストール数・パスの利用状況・日別の統計といった
-            必要な情報がきれいにまとめられています。これらのデータを分析し、
-            運用の改善を行うことで、さらなるリピーター獲得へとつながります。
-          </p>
-          <a href="/features/" title="機能一覧">機能一覧を見る</a>
-        </div>
-      </div>
 
-      <hr class="mb-2">
-    </div>
-  </section>
   <section>
     <div class="container">
-      <div class="row justify-content-center mb-3">
-        <div class="col-12 col-md-8 text-center">
-          <h2><b>最新ブログ</b></h2>
-        </div>
-      </div>
-      <div class="row justify-content-center page-blog-list">
-        {{ range first 3 .Site.Taxonomies.tags.featured }}
-        {{ partial "recent-posts" . }}
-        {{ end }}
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="bg-light">
-      <div class="container pb-8 pt-8 pb-md-8 pt-md-8">
-        <div class="row justify-content-center mb-3">
-          <div class="col-12 col-sm-8 col-md-8 text-center">
-            <h2><b>お知らせ</b></h2>
-          </div>
-        </div>
-        <div class="row justify-content-center page-blog-list">
-          <div class="col-12 col-sm-8 col-md-8">
-
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h2 class="text-center">お知らせ</h2>
+          <div class="h-100">
             {{ range first 3 .Site.Taxonomies.tags.news }}
             {{ partial "news-list" . }}
+            {{ end }}
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <h2 class="text-center">最新ブログ</h2>
+          <div class="h-100">
+            {{ range first 3 .Site.Taxonomies.tags.featured }}
+            {{ partial "recent-posts" . }}
             {{ end }}
           </div>
         </div>
