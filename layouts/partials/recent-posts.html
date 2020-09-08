@@ -1,20 +1,19 @@
-<div class="col-12 mb-2">
-    <div class="card" style="height: 250px;">
-        <div class="card-body">
-            <small class="text-muted mb-3">
-                {{ $dateFormat := default "2006/01/01" (index .Site.Params "date_format") }}
-                <span class="grey-text text-darken-1" content="{{ .Date.Format $dateFormat }}">
-                    {{ .Date.Format $dateFormat }}
-                </span>
-            </small>
-            <h4 class="mt-1">
-                <a class="h4" href="{{ .Page.Permalink }}">
-                    <b>{{ .Title | markdownify }}</b>
-                </a>
-            </h4>
-            <p class="text-muted">
-                {{ .Params.description }}
-            </p>
+<div class="col-12 col-md-4 mb-2">
+    <div class="recent-post">
+        <a class="link-img" href="{{ .RelPermalink }}">
+        <img class="recent-post-img" src="{{ with .Params.heroBackground }}{{ . | absURL }}{{ end }}"
+            alt="{{ .Params.title }}" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" width="100%">
+        </a>
+        <h4 class="my-1">
+        <a class="h4" href="{{ .RelPermalink }}">
+            <b>{{ .Title | markdownify }}</b>
+        </a>
+        </h4>
+        <div class="text-muted">
+        {{ $dateFormat := default "2006/01/01" (index .Site.Params "date_format") }}
+        <span class="grey-text text-darken-1" content="{{ .Date.Format $dateFormat }}">
+            {{ .Date.Format $dateFormat }}
+        </span>
         </div>
     </div>
 </div>
