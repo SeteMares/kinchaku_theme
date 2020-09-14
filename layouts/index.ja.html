@@ -1,11 +1,11 @@
-{{ define "title" }}KINCHAKU | 継続利用を促進するクラウドプラットフォーム{{ end}}
+{{ define "title" }}KINCHAKU | 継続利用を促進するクラウドプラットフォーム{{ end }}
 {{ define "header_css" }}{{ end }}
 {{ define "body_classes" }}page-home{{ end }}
 {{ define "header_classes" }}header-transparent{{ end }}
 
 {{ define "main" }}
 
-{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Section "content" .)}}
+{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Section "content" .) }}
 
 {{ $headless := .Site.GetPage "/homepage" }}
 {{ $reusablePages := $headless.Resources.ByType "page" }}
@@ -156,32 +156,22 @@
         <div class="col-12">
           <h2 class="heading-2 text-center">業種に合わせた活用方法</h2>
         </div>
-        <div class="card-deck m-2">
-          <div class="card">
-            <a href="/usecase/#usecase1">
-              <img class="img-fluid mb-1" src="/images/kanpai.jpg" alt="飲食店" title="飲食店" width="100%" height="100%" />
-              <div class="card-body text-center">
-                <h4 class="card-title">飲食店</h4>
-              </div>
-          </a>
-          </div>
-
-          <div class="card">
-            <a href="/usecase/#usecase2">
-              <img class="img-fluid mb-1" src="/images/kanpai.jpg" alt="飲食店" title="飲食店" width="100%" height="100%" />
-              <div class="card-body text-center">
-                <h4 class="card-title">アパレル</h4>
-              </div>
-            </a>
-          </div>
-          <div class="card">
-            <a href="/usecase/#usecase3">
-              <img class="img-fluid mb-1" src="/images/kanpai.jpg" alt="飲食店" title="飲食店" width="100%" height="100%" />
-              <div class="card-body text-center">
-                <h4 class="card-title">ドラッグストア</h4>
-              </div>
-            </a>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <img
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-restaurant.jpg"
+            alt="飲食店" class="img-thumbnail">
+        </div>
+        <div class="col-12 col-md-4">
+          <img
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-learning.jpg"
+            alt="習い事" class="img-thumbnail">
+        </div>
+        <div class="col-12 col-md-4">
+          <img
+            src="https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-fitness.jpg"
+            alt="ジム・フィットネス" class="img-thumbnail">
         </div>
       </div>
     </div>
@@ -203,7 +193,7 @@
       </div>
     </div>
   </section>
-  
+
   <section>
     <div class="container my-5">
       <div class="row justify-content-center mb-3">
