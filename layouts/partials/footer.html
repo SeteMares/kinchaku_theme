@@ -1,22 +1,54 @@
 <div class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="footer-inner">
-          <div>
-            {{ partial "social" }}
+  <div class="footer-inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-2">
+          {{ partial "social" }}
+        </div>
+        <div class="col-12 col-md-10">
+          <div class="row mb-2 pl-1 pr-1">
+            {{ if .Site.Params.footer_menus1 }}
+            <div class="col-6 col-md-3">
+              {{ $menus := .Site.Menus }}
+              {{ range $index, $menu := .Site.Params.footer_menus1 }}
+              <div>
+                {{ partial "menu-links" (dict "menu" (index $menus $menu.menu) "name" $menu.name ) }}
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+            {{ if .Site.Params.footer_menus2 }}
+            <div class="col-6 col-md-3">
+              {{ $menus := .Site.Menus }}
+              {{ range $index, $menu := .Site.Params.footer_menus2 }}
+              <div>
+                {{ partial "menu-links" (dict "menu" (index $menus $menu.menu) "name" $menu.name ) }}
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+            {{ if .Site.Params.footer_menus3 }}
+            <div class="col-6 col-md-3">
+              {{ $menus := .Site.Menus }}
+              {{ range $index, $menu := .Site.Params.footer_menus3 }}
+              <div>
+                {{ partial "menu-links" (dict "menu" (index $menus $menu.menu) "name" $menu.name ) }}
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+            {{ if .Site.Params.footer_menus4 }}
+            <div class="col-6 col-md-3">
+              {{ $menus := .Site.Menus }}
+              {{ range $index, $menu := .Site.Params.footer_menus4 }}
+              <div>
+                {{ partial "menu-links" (dict "menu" (index $menus $menu.menu) "name" $menu.name ) }}
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
           </div>
-          {{ if .Site.Params.footer_menus }}
-          {{ $menus := .Site.Menus }}
-          {{ $colWidth := math.Floor (div 12 (len .Site.Params.footer_menus)) }}
-          {{ range $index, $menu := .Site.Params.footer_menus }}
-          <div>
-            {{ partial "menu-links" (dict "menu" (index $menus $menu.menu) "name" $menu.name ) }}
-          </div>
-          {{ end }}
-          {{ end }}
         </div>
       </div>
     </div>
   </div>
-</div>

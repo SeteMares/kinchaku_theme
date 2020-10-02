@@ -14,6 +14,36 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="heading-2 my-5 text-center">
+        <span class="heading-2--block">KINCHAKUで</span>
+        <span class="heading-2--block">発行できるパスの種類</span>
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    {{ range .Site.Data.jawalletpasses }}
+    {{ if .featured }}
+    <div class="col-12 col-md-6 col-lg-4 mb-2">
+      <h3 class="h4 text-primary mb-1 text-center"><a href="{{ .url }}" title="{{ .title }}">{{ .title }}</a></h3>
+      <a href="{{ .url }}" title="{{ .title }}" class="link-img">
+        <img class="img-fluid" src="{{ .img }}" alt="{{ .title }}" title="{{ .title }}" width="100%" />
+      </a>
+      <div class="mt-2 mb-3 text-center">
+        {{ .description }}
+      </div>
+    </div>
+    {{end}}
+    {{end}}
+  </div>
+</div>
+
 {{ if .Content }}
 <div class="container mt-3 pt-1 pt-xs-1">
   <div class="row mb-3">
@@ -28,7 +58,7 @@
       <h2>WALLETPASS （ウォレットパス）を使うメリット</h2>
       <ul>
         <li>これ以上財布にカードを増やすことなく、紛失や忘れることもなくなります。</li>
-        <li>わざわざ専用のアプリを落とさなくても使えます。</li>
+        <li>わざわざ専用のアプリをインストールしなくても使えます。</li>
         <li>特定の時間や圏内に入ると役立つ情報の自動表示が設定できます。</li>
       </ul>
     </div>
@@ -42,9 +72,9 @@
       <h3 class="mt-3">ロック画面の通知</h3>
       <ul style="list-style-type: disc; padding-left: 20px;">
         <li class="mb-1">スマホのロック画面にリアルタイムの情報を発信し、お客様の来店や再来店を促進できます。</li>
-        <li class="mb-1">時間を設定し、人がより外出する時間帯などにプッシュ通知を配信できます。</li>
-        <li class="mb-1">店舗やイベント会場の場所を設定し、広範囲でプッシュ通知を配信できます。</li>
-        <li class="mb-1">ビーコン端末を設置した店舗やイベント会場で近距離プッシュ通知を配信できます。</li>
+        <li class="mb-1">時間を設定し、人がより外出する時間帯などにパス通知を配信できます。</li>
+        <li class="mb-1">店舗やイベント会場の場所を設定し、広範囲でパス通知を配信できます。</li>
+        <li class="mb-1">ビーコン端末を設置した店舗やイベント会場で近距離パスパス通知を配信できます。</li>
       </ul>
     </div>
     <div class="col-12 col-md-7">
@@ -59,31 +89,18 @@
       <img class="img-fluid my-3"
         src="https://s3-ap-northeast-1.amazonaws.com/kinchaku-static-site/uploads/pass-data.png" alt="パスデータ"
         title="パスデータ" />
-
       <ul style="list-style-type: disc; padding-left: 20px;" class="mb-3">
         <li class="mb-1">利用状況を見える化し、どの販促行動が効果的かを測ることができます。</li>
         <li class="mb-1">顧客をセグメント化し、商品・サービスのアプローチを改善できます。</li>
         <li class="mb-1">メルマガ・DM などでもお客様との関係構築を強化することが期待できます。</li>
       </ul>
-
     </div>
   </div>
 </div>
 {{ end }}
-<div class="container pt-3 pt-xs-1">
-  <div class="row">
-    <div class="col-12">
-      <h3 class="mb-3">発行可能なパス一覧</h3>
-    </div>
-  </div>
-</div>
+
 <div class="container pb-6 pb-md-6">
-  <div class="row">
-    {{ range .Pages.ByWeight }}
-    <div class="col-12 col-md-4 mb-2 ">{{ .Render "summary" }}</div>
-    {{ end }}
-  </div>
-  <div class="row mt-3">
+  <div class="row my-3">
     <div class="col-12 col-sm-12">
       <div class="card border-danger mt-3">
         <div class="card-body">

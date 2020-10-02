@@ -1,8 +1,8 @@
 {{ $name := .name }}
 {{ with .menu }}
-<ul class="list-inline" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+<ul class="list-unstyled" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
   {{ range . }}
-  <li class="list-inline-item" itemprop="name">
+  <li itemprop="name">
     <a class="text-light text-capitalize" itemprop="url" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
   </li>
   {{ end }}
