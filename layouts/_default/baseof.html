@@ -13,10 +13,8 @@
   {{ partial "analytics-prod.html" . }}
   {{ end }}
 
-  {{ if and (eq .Kind "taxonomy") (eq .Type "categories") }}
-  <meta name="robots" content="noindex, follow" />
-  {{ else }}
-  <meta name="robots" content="index, follow" />
+  {{ if (eq .Kind "404") }}
+  <meta name="robots" content="noindex, nofollow" />
   {{ end }}
 
   {{ partial "meta-tags.html" . }}

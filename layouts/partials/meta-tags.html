@@ -59,7 +59,10 @@
 {{ with .Site.Params.facebook.appid }}
 <meta property="fb:app_id" content="{{ . }}" />{{ end }}
 {{ end }}
-{{ if .IsHome }}{{ partial "jsonld/website" . }}{{ end }}
+{{ if .IsHome }}
+<meta name="robots" content="index, follow" />
+{{ partial "jsonld/website" . }}
+{{ end }}
 {{ if eq .Params.Slug "pricing" }}{{ partial "jsonld/webapplication" . }}{{ end }}
 {{ if .IsPage }}
 <meta property="og:type" content="website" />
