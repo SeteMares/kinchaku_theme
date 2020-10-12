@@ -1,14 +1,18 @@
-<div id="main-menu" class="main-menu">
-  <ul itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+<div id="main-menu" class="main-menu float-right">
+  <ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="nav justify-content-end">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
     <li itemprop="name"
-      class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
-      <a href="{{.URL}}" itemprop="url" href="{{ .URL | relLangURL }}">
+      class="nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+      <a class="nav-link" href="{{ .URL }}" itemprop="url" href="{{ .URL | relLangURL }}">
         {{ .Pre }}
         <span>{{ .Name }}</span>
       </a>
     </li>
-    {{end}}
+    {{ end }}
+    <li class="ml-3">
+      <a href="https://app.kinchaku.com/signup" class="btn btn-sm btn-outline-primary d-none d-md-block" role="button"
+        title="アカウント登録">アカウント登録</a>
+    </li>
   </ul>
 </div>

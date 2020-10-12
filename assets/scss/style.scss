@@ -24,12 +24,12 @@
 @import 'bootstrap/forms';
 @import 'bootstrap/input-group';
 @import "bootstrap/list-group";
+@import "bootstrap/nav";
 
 // @import "bootstrap/modal";
 // @import "bootstrap/code";
 // @import "bootstrap/transitions";
 // @import "bootstrap/custom-forms";
-// @import "bootstrap/nav";
 // @import "bootstrap/navbar";
 // @import "bootstrap/badge";
 // @import "bootstrap/jumbotron";
@@ -114,12 +114,13 @@ a.link-img:hover {
   position: relative;
   padding: 0.25em 0;
 }
+
 .yoshiki-h2:after {
   content: "";
   display: block;
   height: 4px;
-  background: -webkit-linear-gradient(to right, rgb(48,63,159), transparent);
-  background: linear-gradient(to right, rgb(48,63,159), transparent);
+  background: -webkit-linear-gradient(to right, rgb(48, 63, 159), transparent);
+  background: linear-gradient(to right, rgb(48, 63, 159), transparent);
 }
 
 // Display breakpoints for DEV
