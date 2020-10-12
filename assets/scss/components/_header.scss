@@ -16,7 +16,7 @@
   }
 
   &.header-absolute {
-    position: absolute;
+    position: fixed;
     z-index: 10;
     width: 100%;
   }
@@ -28,11 +28,4 @@
       position: static;
     }
   }
-}
-
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10000;
 }
