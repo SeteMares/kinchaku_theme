@@ -10,6 +10,8 @@
       </a>
     </li>
     {{ end }}
+    {{ $currentLang := .Site.Language.Lang }}
+    {{ if eq $currentLang "ja" }}
     <li class="ml-3">
       <a href="https://app.kinchaku.com/signin" class="btn btn-sm btn-link d-none d-md-block" role="button"
         title="ログイン">ログイン</a>
@@ -18,5 +20,14 @@
       <a href="https://app.kinchaku.com/signup" class="btn btn-sm btn-outline-primary d-none d-md-block" role="button"
         title="アカウント登録">アカウント登録</a>
     </li>
+    {{ else }}
+    <li class="ml-3">
+      <a href="https://app.kinchaku.com/signin" class="btn btn-sm btn-link d-none d-md-block" role="button"
+        title="Sign in">SIGN IN</a>
+    </li>
+    <li class="ml-1">
+      <a href="https://app.kinchaku.com/signup" class="btn btn-sm btn-outline-primary d-none d-md-block" role="button"
+        title="Sign up">REGISTER</a>
+    {{ end }}
   </ul>
 </div>
