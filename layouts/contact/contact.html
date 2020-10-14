@@ -17,7 +17,7 @@
     <div class="col-12 col-md-8">
       {{ .Content }}
       <hr />
-      <div class="mt-4 mb-3 ">
+      <div class="mt-4 mb-3">
         {{ $currentLang := .Site.Language.Lang }}
         {{ if eq $currentLang "ja" }}
         {{ partial "contact-form-jp" . }}
