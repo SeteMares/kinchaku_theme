@@ -98,46 +98,25 @@
         <div class="col-12">
           <h2 class="heading-2 text-center">主な機能</h2>
         </div>
-        <div class="card-deck m-2">
-          <div class="card">
-            <div class="card-body text-center">
-              <h4 class="card-title">発 行</h4>
-              <p class="card-text">デジタルパス発行</p>
+        <div class="container">
+          <div class="row">
+            {{ range .Site.Data.jawalletpasses }}
+            {{ if .featured }}
+            <div class="col-12 col-md-6 col-lg-4">
+              <h3 class="h4 text-primary mb-1 text-center"><a href="{{ .url }}" title="{{ .title }}">{{ .title }}</a></h3>
+              <a href="{{ .url }}" title="{{ .title }}" class="link-img">
+                <img class="img-fluid" src="{{ .img }}" alt="{{ .title }}" title="{{ .title }}" width="100%" />
+              </a>
+              <div class="mt-2 mb-3 text-center">
+                {{ .description }}
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-body text-center">
-              <h4 class="card-title">配 布</h4>
-              <p class="card-text">多様な配布方法</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body text-center">
-              <h4 class="card-title">消 込</h4>
-              <p class="card-text">加盟店用スキャンアプリ</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body text-center">
-              <h4 class="card-title">解 析</h4>
-              <p class="card-text">顧客データ・利用データの可視化</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body text-center">
-              <h4 class="card-title">発 信</h4>
-              <p class="card-text">カスタム通知</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body text-center">
-              <h4 class="card-title">安 心</h4>
-              <p class="card-text">手厚いサポート</p>
-            </div>
+            {{end}}
+            {{end}}
           </div>
         </div>
-        <div class="col-12 text-center mt-2 my-0">
-          <a href="/features/">全ての機能をみる</a>
+        <div class="col-12 text-center">
+          <a href="/features/">その他のすべての機能を見る</a>
         </div>
       </div>
     </div>
