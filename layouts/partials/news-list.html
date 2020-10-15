@@ -1,18 +1,13 @@
-<div class="card">
-    <div class="card-body">
-        <small class="text-muted mb-3">
-            {{ $dateFormat := default "2006/01/01" (index .Site.Params "date_format") }}
-            <span class="grey-text text-darken-1" content="{{ .Date.Format $dateFormat }}">
-                {{ .Date.Format $dateFormat }}
-            </span>
-        </small>
-        <h4 class="h4 mt-1">
-            <a href="{{ .Page.Permalink }}">
-                <b>{{ .Title | markdownify }}</b>
-            </a>
-        </h4>
-        <p class="text-muted mb-1">
-            {{ .Params.description }}
-        </p>
-    </div>
+<div class="col-3 col-md-4 text-right my-1">
+    {{ $dateFormat := default "2006/01/01" (index .Site.Params "date_format") }}
+    <span class="grey-text text-darken-1" content="{{ .Date.Format $dateFormat }}">
+        {{ .Date.Format $dateFormat }}
+    </span>
+</div>
+<div class="col-9 col-md-8 my-1">
+    <h4 class="h4">
+        <a href="{{ .Page.Permalink }}">
+            <b>{{ .Title | markdownify }}</b>
+        </a>
+    </h4>
 </div>

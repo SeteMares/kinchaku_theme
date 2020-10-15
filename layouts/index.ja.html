@@ -157,26 +157,28 @@
 
   <section>
     <div class="container my-5">
-      <div class="row justify-content-center mb-3">
-        <div class="col-12 col-md-8 text-center">
-          <h2>お知らせ</h2>
+      <div class="row">
+        <div class="col-12">
+          <h2 class="heading-2 text-center">お知らせ</h2>
         </div>
       </div>
-      <div class="row justify-content-center page-blog-list">
-        <div class="card-deck mx-2">
-          {{ range first 3 .Site.Taxonomies.tags.news }}
-          {{ partial "news-list" . }}
-          {{ end }}
-        </div>
+      <div class="row">
+        {{ range first 3 .Site.Taxonomies.tags.news }}
+        {{ partial "news-list" . }}
+        {{ end }}
       </div>
+      <p class="text-center mt-1">
+        <a class="btn btn-primary button-round btn-lg mb-0 px-9 py-1" href="/categories/お知らせ/" title="お知らせ一覧">お知らせ一覧
+        </a>
+      </p>
     </div>
   </section>
 
   <section>
-    <div class="container my-5">
-      <div class="row justify-content-center mb-3">
-        <div class="col-12 col-md-8 text-center">
-          <h2>最新ブログ</h2>
+    <div class="container my-8">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="heading-2 text-center">最新ブログ</h2>
         </div>
       </div>
       <div class="row justify-content-center page-blog-list mx-1">
