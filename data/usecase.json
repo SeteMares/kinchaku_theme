@@ -1,0 +1,26 @@
+[
+    {
+        "title": "飲食店",
+        "featured": true,
+        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-restaurant.jpg",
+        "url": "/blog/usecase-cafe/"
+    },
+    {
+        "title": "ホテル",
+        "featured": true,
+        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-hotel.jpg",
+        "url": "/usecase/hotel/"
+    },
+    {
+        "title": "ジム・フィットネス",
+        "featured": true,
+        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-fitness.jpg",
+        "url": "/blog/usecase-fitness/"
+    },
+    {
+        "title": "習い事",
+        "featured": true,
+        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-learning.jpg",
+        "url": "/blog/usecase_lesson/"
+  }
+]
