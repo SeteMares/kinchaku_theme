@@ -117,7 +117,7 @@
 
 .page-walletpass-single {
   .walletpass-hero {
-    height: 36vh;
+    height: 40vh;
     position: relative;
     padding-top: 60px;
   }
@@ -125,7 +125,7 @@
   .walletpass-hero img {
     overflow-y: hidden;
     position: absolute;
-    clip: rect(0px, 400px, 201px, 0px);
+    clip: rect(0px, 400px, 230px, 0px);
     padding-top: 0.4rem;
 
     @include media-breakpoint-down(sm) {
