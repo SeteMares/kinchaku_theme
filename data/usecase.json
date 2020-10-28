@@ -3,7 +3,7 @@
         "title": "飲食店",
         "featured": true,
         "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-restaurant.jpg",
-        "url": "/blog/usecase-cafe/"
+        "url": "/usecase/restaurant/"
     },
     {
         "title": "ホテル",
