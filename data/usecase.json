@@ -12,6 +12,12 @@
         "url": "/usecase/hotel/"
     },
     {
+        "title": "施設・レンタルスペース",
+        "featured": true,
+        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-rental-space.jpg",
+        "url": "/usecase/rental-space/"
+    },
+    {
         "title": "ジム・フィットネス",
         "featured": true,
         "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-fitness.jpg",
@@ -22,5 +28,5 @@
         "featured": true,
         "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-learning.jpg",
         "url": "/blog/usecase_lesson/"
-  }
+    }
 ]
