@@ -14,8 +14,8 @@
         "url": "/walletpass/coupon/"
     },
     {
-        "title": "イベントチケット",
-        "description": "オンラインイベントやセミナーでも使えるスマホに追加可能なイベントチケット",
+        "title": "チケット",
+        "description": "オンラインイベントやセミナーでも使えるスマホに追加可能なチケット",
         "featured": true,
         "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/walletpass/eventticket.jpg",
         "url": "/walletpass/event-pass/"
