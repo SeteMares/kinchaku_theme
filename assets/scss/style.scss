@@ -123,6 +123,16 @@ a.link-img:hover {
   background: linear-gradient(to right, rgb(48, 63, 159), transparent);
 }
 
+.page-single ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.page-single .section-main ol li,
+.page-single .section-main ul li {
+  margin-bottom: 1em;
+}
+
 // Display breakpoints for DEV
 // body:after {
 //   color: #000000;
