@@ -8,6 +8,7 @@
   <div class="container py-3">
     <div class="row">
       <div class="col align-self-center">
+        {{ partial "breadcrumb" . }}
         <h1 class="text-white">{{ .Params.heroHeading }}</h1>
         <p class="text-white">{{ .Params.heroSubHeading }}</p>
       </div>
