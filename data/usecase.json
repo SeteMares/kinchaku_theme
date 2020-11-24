@@ -24,9 +24,15 @@
         "url": "/usecase/rental-space/"
     },
     {
-        "title": "習い事",
+        "title": "ドラッグストア",
         "featured": true,
-        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-learning.jpg",
-        "url": "/blog/usecase_lesson/"
+        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-pharmacy.jpg",
+        "url": "/usecase/drugstore/"
+    },
+    {
+        "title": "美容室",
+        "featured": true,
+        "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/industry-hairdresser.jpg",
+        "url": "/usecase/beauty/"
     }
 ]
