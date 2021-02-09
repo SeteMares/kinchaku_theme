@@ -30,5 +30,13 @@
     "featured": true,
     "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/case-study/Okinawa_dambo3.png",
     "url": "/casestudy/okinawa-dambo/"
+  },
+  {
+    "title": "英語設定で外国人のお客さまにも対応。割引券で相互送客を促進！",
+    "company_name": "日本ハーモニー・リゾート",
+    "industry": "リゾート",
+    "featured": true,
+    "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/case-study/Hanazono+EDGE1.png",
+    "url": "/casestudy/hanazononiseko/"
   }
 ]
