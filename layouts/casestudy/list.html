@@ -1,0 +1,50 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+
+<div class="taxonomy-hero strip-primary">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col align-self-center">
+        {{ partial "breadcrumb" . }}
+        <h1 class="text-white">{{ .Params.heroHeading }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    {{ range .Site.Data.casestudy }}
+    {{ if .featured }}
+    <div class="col-12 col-md-6 col-lg-3 my-2">
+    <div class="card">
+      <a href="{{ .url }}" title="{{ .title }}" class="link-img">
+        <img class="img-fluid" src="{{ .img }}" alt="{{ .title }}" title="{{ .title }}" width="100%" />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ .title }}</h5>
+        <p class="card-text mb-0"><b>{{ .company_name }}</b></p>
+        <p class="card-text">{{ .industry }}</p>
+      </div>
+    </div>
+  </div>
+    {{end}}
+    {{end}}
+  </div>
+</div>
+{{ partial "cta-section.html" . }}
+{{ end }}
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
+{{ if .Site.IsServer }}
+<script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+{{ else }}
+<script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
+{{ end }}
