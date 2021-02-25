@@ -38,5 +38,13 @@
     "featured": true,
     "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/case-study/Hanazono+EDGE1.png",
     "url": "/casestudy/hanazononiseko/"
+  },
+  {
+    "title": "お客さまに嫌われないスタンプカードをコミュニケーションツールに。",
+    "company_name": "モトーレン東名横浜",
+    "industry": "自動車ディーラー",
+    "featured": true,
+    "img": "https://kinchaku-static-site.s3-ap-northeast-1.amazonaws.com/uploads/landing-theme/case-study/BMW.3.png",
+    "url": "/casestudy/tomeiyokohama/"
   }
 ]
